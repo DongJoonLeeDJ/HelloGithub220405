@@ -1,4 +1,8 @@
 asdf
 asdf2
 
+<<<<<<< HEAD
 asdf4
+=======
+asdf4
+>>>>>>> a01dd1bf99df664b7e0e1b8a548ae05cb6b56d5c
