@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "result"></h1>
+   
+   <script>
+       //input = ""을 해주는 이유
+       //input 변수가 문자열타입이고, 공백을 가지고 있음을 명시
+        let input = "" //변수 타입은 var 아니면 let
+        //var는 옛날꺼
+        //let은 최신 문법
+        //둘 다 js의 특성상 타입이 정해져 있지 않다.
+        //둘의 차이점
+        //var는 변수선언을 중복해도 된다.
+        var a = 10
+        var a = "안녕"
+        //이와 같이 중복해서 선언해도 동작은 한다. 다만 논리적 오류가 발생할 순 있다.
+        //근데 let은 이러한 문제점을 해결해줌. 즉 중복선언하면 아예 실행이 안 됨
+
+        //입력받는 창
+        //그러나 이렇게 입력을 받는 사이트는 요즘 매우 드물다.
+        let floor = prompt("몇층?")
+
+        for(let i = 1; i<=floor; i++) //for문 작성시에도 int등의 타입이 없으므로
+        {                             //let타입 변수로 대체됨
+            for(let j = 0; j<i; j++)
+                input += "*"
+            
+            input += "\n"
+        }
+        console.log(input) //console.log는 콘솔창에 글자 적어줌
+        //document = DOM 객체
+        //웹페이지 안에서 존재하는 모든 컴포넌트들(태그 등)을 제어할 수 있는 객체
+        let h1tag = document.querySelector('#result') //id가 result인 태그를 선택해서 h1tag태그 변수에 대입
+        h1tag.innerText = input//그래서 해당 태그의 글자를 input 값으로 바꿈
+
+        h1tag.style.color = "red"
+
+        let colorList = ["red","green","blue","cyan","springgreen"] //자바스크립트의 배열
+        h1tag.style.color = colorList[Math.floor(Math.random()*5)]
+        //Math.floor(Math.random()*5)
+        //Math.floor -> 버림
+        //Math.random() -> 0이상 1미만의 실수를 랜덤하게 반환하는 값
+        //Math.random()*5 -> 최소 0 최대 4.9999999999999999가 나옴.
+
+        //동적으로 코드상에서 태그 추가
+        let myp = document.createElement('p') //p태그를 코드상에서 만들기
+        myp.id = "이재형" //id추가
+        myp.innerText = "이재형은 4차반 친구에요" //텍스트 추가
+        myp.style.color = "gold" //색상
+        myp.style.background = "black" //배경색상
+        document.body.appendChild(myp) //body에 추가해줘야 함. 이거 안 하면 p태그 내용 안 보임
+        
+
+        
+    </script>
+
+</body>
+</html>
