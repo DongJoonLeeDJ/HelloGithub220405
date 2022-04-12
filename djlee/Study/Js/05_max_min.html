@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numbers = []
+        for(let i = 0; i<5; i++)
+            numbers[i] = Number(prompt("숫자 입력해라"))
+        let max = numbers[0]
+        let min = max
+        for(let i = 0; i<5; i++) 
+        {
+            if(max<numbers[i])
+                max = numbers[i]
+            if(min > numbers[i])
+                min = numbers[i]
+        }
+
+        alert("max " + max + " min " + min)
+    </script>
+</body>
+</html>
