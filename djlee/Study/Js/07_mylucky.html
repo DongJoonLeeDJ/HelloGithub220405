@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <span>출생연도?</span>
+    <input type="text" id="birth">
+    <button id="btn_lucky">오늘의 명언</button>
+    <h1 id="result"></h1>
+
+    <script>
+        let lucky1 = ["공부하자", "운동하자"]
+        let lucky2 = ["잠을 잘 자자", "화내지 말자"]
+        let lucky3 = ["잘 먹자", "늘 웃자"]
+        let lucky4 = ["우울할 때도 있는 법인 걸 알자", "미소 짓자"]
+        let lucky5 = ["긍정적으로 생각하자", "겸손하게 살자"]
+        let lucky6 = ["먼저 사과하자", "먼저 말 걸어주자"]
+        let lucky7 = ["어려운 사람들을 돕자", "희망을 잃지 말자"]
+        let lucky8 = ["포기하지 말자", "뒷담화 하지 말자"]
+        let lucky9 = ["글을 많이 읽자", "유튜브 조금만 보자"]
+        let lucky10 = ["비판보단 칭찬을 많이 하자", "충고를 잘 듣자"]
+        let lucky11 = ["늘 감사하자", "역지사지로 생각하자"]
+        let lucky12 = ["자신감을 갖자", "교만하지 말자"]
+
+        let mylucky = [lucky1,lucky2,lucky3,lucky4,lucky5,lucky6,
+        lucky7,lucky8,lucky9,lucky10,lucky11,lucky12]
+
+        //console.log(mylucky[0][0])// mylucky 안에 있는 lucky의 0번째 값
+        //console.log(mylucky[0][1])// mylucky 안에 있는 lucky의 1번째 값
+
+        // let myBirthYear = prompt("몇년도생이신가요?")
+        // if(Number(myBirthYear)>0) //취소하면 0이 들어감
+        // {
+        //     myBirthYear = myBirthYear%12
+            
+        //     let myrandom = Math.floor(Math.random()*2); //0 혹은 1이 나옴
+            
+        //     alert(mylucky[myBirthYear][myrandom])   
+        // }
+
+        let birth = document.querySelector("#birth")
+        let btn_lucky = document.querySelector("#btn_lucky")
+        let result = document.querySelector("#result")
+
+        btn_lucky.onclick = function() {
+            //birth는 분명 id가 birth인 태그를 선택함
+            //근데 숫자 9로 바뀜
+            birth = birth.value%12
+            console.log(birth)
+            let ran = Math.floor(Math.random()*2)
+            result.innerText = mylucky[birth][ran]
+            birth = document.querySelector("#birth") //이걸로 다시 안 바꿔주면. 버튼 두 번째 누를 때부터 오류남
+            //왜냐면 birth가 9이기 때문에 태그로써의 기능을 상실
+        }
+
+    </script>
+</body>
+</html>

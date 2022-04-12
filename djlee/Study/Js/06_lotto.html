@@ -9,6 +9,52 @@
 <body>
     <h1>행운의 주인공은 내가 될 것인가!?</h1>
     <h1 id="lotto"></h1>
-   
+   <!-- 7개의 난수. 서로 중복되면 안 됨. 순차정렬 -->
+   <button id="genLotto">로또 번호 뽑기</button>
+
+   <script>
+       let genLotto = document.getElementById('genLotto')
+       let lotto = document.querySelector('#lotto')
+       genLotto.onclick = function() {
+           let arr = []
+           //값 넣기(중복된 거 있는지 여부 체크 포함)
+           for(let i = 0; i<7; i++) {
+                let num = Math.floor(Math.random()*45)+1 //1~45
+                arr[i] = num
+                for(let j = 0; j<i; j++) {
+
+                    if(arr[i]==arr[j])
+                    {
+                        i--
+                        break
+                    }
+                }
+           }
+            console.log(arr)
+            //정렬
+            for(let i = 0; i<arr.length; i++){
+                
+                //-1의 의미 : j번째와 j+1번째를 비교해야 하므로 가장 끝에껀 j-1번째가 되어야 인덱스 오류 안 남(outofIndex)
+                //-i의 의미 : i가 커질수록, 가장 큰 숫자가 맨 뒤로 하나씩 가게 됨. 
+                //가면갈수록 맨 끝 부분들은 이미 정렬이 다 되어 있기 때문에 비교할 필요가 없어짐
+
+                for(let j = 0; j<arr.length-1-i; j++) {
+                    if(arr[j]>arr[j+1]) {
+                        let temp = arr[j]
+                        arr[j] = arr[j+1]
+                        arr[j+1] = temp
+                    }
+                }
+
+            }
+            console.log(arr)
+            lotto.innerText = "" //text 초기화
+            for(let i = 0; i<arr.length; i++)
+                lotto.innerText += arr[i] + "\u00a0"
+       }
+
+
+
+   </script>
 </body>
 </html>
