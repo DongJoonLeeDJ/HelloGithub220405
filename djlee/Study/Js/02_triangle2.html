@@ -7,8 +7,55 @@
     <title>Document</title>
 </head>
 <body>
+
+    <span>층 수 입력</span>
+    <input type="text" id="floor">
+    <!-- 컨트롤 슬래시 하면 html, js에 따라서 알아서 주석 생김 -->
+    <!-- button#output -->
+    <button id="output">피라미드 출력</button>
+
     <script>
-        
+        //참고로 js에서는 문자개념(char) 없다
+        //무조건 문자열
+        //그래서 문장을 적을 때 '안녕' 이렇게 적어도 되고, "안녕" 이렇게 적어도 됩니다.
+        //document.querySelector는 style의 선택자처럼 태그 선택
+        let output = document.getElementById('output') //id만 선택하는 전용 기능
+        //addEventListner 혹은 onclick 이용해서 output 태그를 눌렀을 때 함수가 실행되게 함
+        output.onclick = function() {
+            let floor = document.querySelector('#floor').value
+            floor = Number(floor)  //숫자로 변환
+            //alert(++floor) //alert : 경고창띄우기, ++floor: 값을 하나 증가시키고 그 다음 출력
+            let triangle = ""
+            for(let i = 1; i<=floor; i++) 
+            {
+                for(let j = floor; j>i; j--)
+                    //triangle+= "&nbsp;" //&nbsp; : 태그 안에서 space  그냥 스페이스바 치면 한 칸만 들어감
+                    triangle += "\u00a0" //innerText에서의 공백 삽입
+                for(let j = 0; j<i; j++)
+                    triangle += "*"
+                
+                triangle+="\n" //innerText에서의 개행 삽입(자동으로 <br>로 바뀜)
+                //triangle+="<br>"
+            }
+            console.log(triangle)
+
+            //document.body.remove('#h1result')
+            //let oldresult = document.getElementById("h1result")
+
+            //id가 h1result인 태그가 존재할 때, 이 태그를 지운다.
+            //js에서는 0,null,''(공백),undefined 과 같은 일부 값들만 false로 간주하고
+            //그 외의 모든 값들은 전부다 true로 간주
+            //document.getElementById("h1result")가 존재한다면 true로 간주하고, remove수행
+            //만약 document.getElementById("h1result")가 없다면 false로 간주하고 remove 수행 안 함
+            if(document.getElementById("h1result"))
+                document.getElementById("h1result").remove()
+
+            let result = document.createElement('h1')
+            result.id = "h1result"
+            result.innerText = triangle
+           // result.innerHTML = triangle 
+            document.body.appendChild(result)
+        }
     </script>
 </body>
 </html>

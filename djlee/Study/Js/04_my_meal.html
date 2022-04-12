@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <i>무엇을 먹을지 고민하지 말라 - 마태복음 -</i>
+    <button id="choice_lunch">점심 고르기</button>
+    <hr>
+    <img id="lunch">
+
+    <script>
+        let choice_lunch = document.querySelector('#choice_lunch')
+
+        let 스테이크 = "https://sjnfzdfjrjgl1655541.cdn.ntruss.com/goods/3/2019/07/182_tmp_f446cff11d4b21639f08a65e0689282e4722view.jpg"
+        let 떡볶이 = "https://recipe1.ezmember.co.kr/cache/recipe/2016/10/07/f43063e718c49d85ddce4880e4a41fcd1.jpg"
+        let 초밥 = "https://rimage.gnst.jp/livejapan.com/public/article/detail/a/00/00/a0000881/img/basic/a0000881_main.jpg"
+        let 순두부찌개 = "https://recipe1.ezmember.co.kr/cache/recipe/2017/12/27/edd739fdab97c72b3a2bf9cd812daf671.jpg"
+        let 돈까스 = "https://post-phinf.pstatic.net/MjAyMDA0MTZfMjY3/MDAxNTg2OTk5MzYwOTMw.YZk3XJCkJqOrZmSzXTGfnXcfoj5CoLQfY9kEBhBmlyYg.WdEgjt1SmPLlCfi8nmVMB79FymTDi3ApEfQJrGF57Acg.JPEG/1.jpg?type=w1200"
+        
+
+        //js의 유연함 중 하나
+        //배열을 만들 때 아예 아무것도 없는 배열([]) 로 만든 뒤
+        //내가 원하는 인덱스 적고 거기에 값을 추가하면 배열이 그 것에 맞게 크기가 늘어남
+        //java의 ArrayList, C#의 List이랑 비슷함
+        let lunchList = [스테이크,떡볶이,초밥]
+        lunchList[3] = 순두부찌개
+        lunchList[4] = 돈까스
+        //결과적으로 luchList배열은 5칸이고, 이 각 칸에는 각 이미지들의 url이 들어있다.
+
+        //이거 2개 서로 똑같은 거임
+        //() => {} 
+        // function() {} 
+        choice_lunch.onclick = () => {
+            let lunch = document.querySelector("#lunch")
+            lunch.src = lunchList[   Math.floor( Math.random()*5 )   ]
+        }
+    </script>
+</body>
+</html>
