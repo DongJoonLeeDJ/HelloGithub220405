@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span></span>
+    <script>
+        let start = "1"  //시작용 숫자
+        let result = ""
+        for (let i = 0; i<20; i++) {
+            result += `${i+1}번째 : ${start}\n` // 더하기(+) 없이 문자열과 변수값들을 이어붙인 것
+            //console.log(result[i]) // result라는 글자에서 i번째 출력하는 거
+            let end = "" //누적값.   읽고 말할 때, 누적이 필요할 때 씀
+            let number = start[0] //내가 "현재" 가리키는 숫자. 즉 읽는 숫자
+            //start[0]의 의미 : start라는 문자열의 0번째 글자
+            let count = 0 //내가 읽은 숫자의 개수
+            for(let j = 0; j<start.length; j++) {
+
+                //start[j] : start라는 문자열의 j번재 글자
+                if(number != start[j]) { //읽는 숫자가 달라질 때
+                    end = end+number+count //지금까지 읽은 숫자들을 모두 누적 시킴
+                    count = 1 //다른 숫자가 발견되었으므로 count를 1로 초기화
+                    number = start[j] //읽는 숫자를 바꿈
+                } else {
+                    count++
+                }
+            }
+            end = end+number+count
+            start = end
+        }
+        //이렇게 적으면 오류가 날 수도 있지 않나?
+        //document.querySelector('span').innerText = result //querySelector : 무조건 하나만 선택
+        //document.getElementsByTagName('span')[0].innerText = result
+        document.querySelectorAll('span')[0].innerText = result // span 태그 모두 선택
+    </script>
+</body>
+</html>
