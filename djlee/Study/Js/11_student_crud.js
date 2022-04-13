@@ -69,9 +69,27 @@ window.onload = () => {
     }
     //학생 수정
     update.onclick = function() {
+        //for문을 통해서 하나하나 찾기
+        //findIndex로 위치 찾아서 수정하기
+        for(let item of students)
+        {
+            //만약 번호가 1번인 학생을 찾았다면
+            if(num.value == item.number)
+            {
+                //item값을 바꾸면 students의 해당 객체의 값이 바뀜
+                item.name = name.value //그 학생의 이름과 나이를 바꾼다.
+                item.age = age.value
+            }
+        }
     }
     //학생 삭제
     my_delete.onclick = function() {
+        //for문 or findIndex를 쓰면 됨
+
+        let idx = students.findIndex(a=> a.number == num.value)
+        if(idx!=-1) {
+            students.splice(idx,1) //idx번째꺼 하나를 뺀다.
+        }
     }
     //전체 조회
     consolelog.onclick = function() {
