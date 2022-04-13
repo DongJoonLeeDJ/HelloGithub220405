@@ -96,4 +96,16 @@ window.onload = () => {
         console.log(students)
     }
 
+    document.querySelector("#test").onclick = () => {
+        let a = new Student('오은영',30,1) //Student타입의 객체
+        let b = Student3('라스푸틴',1000,2)//Student타입의 객체
+        let c = Student2('데드풀',50,3) //그냥 객체(console.log 결과 확인해보기)
+        a.registerInfo()
+        b.registerInfo()
+        c.registerInfo()
+        console.log(a)
+        console.log(b)
+        console.log(c)
+    }
+
 }
