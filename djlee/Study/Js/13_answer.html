@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<button>콜백 함수 테스트</button>
+출력메시지 : <input type="text" id="text">
+출력횟수 : <input type="text" id="count">
+
+    <script>
+        
+        let button = document.querySelector('button')
+        let text = document.querySelector('#text') //value가 아니고 태그 자체를 저장시켜야 함
+        let count = document.querySelector('#count')//왜냐면 시작하자마자 태그에 값이 들어가 있진 않다.
+        //근데 text에 해당 태그의 value를 저장하면... 그냥 공백을 저장한 거랑 똑같다.
+        //count도 마찬가지
+
+        
+        
+
+        //매개변수 하나를 받는 helloWorld라는 이름의 함수 선언
+        function helloWorld(a)
+        {
+            console.log("안녕 " + a+"씨")
+        }
+
+        //어떤 기능을 갖는 exe라는 변수 선언
+        let exe = function(h,n,c) {
+            for(let i = 0; i<c; i++)
+                h(n+i)
+        }
+
+        //콜백함수 : 다른 함수의 매개변수로써 동작하는 것
+        //exe(helloWorld,'이동준') //helloWorld라는 함수가 콜백함수로써 쓰이고 있다. 
+        //exe라는 함수 역시 click 이벤트 호출시 호출되는 함수 안에서 호출되는 함수
+
+        //함수 호출할 때 해당 태그에 있는 값을 매개변수로 보내줘야 함
+        button.addEventListener('click', () => exe(helloWorld, text.value,count.value) )
+
+    </script>
+
+</body>
+</html>
