@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script src="11_student.js"></script> <!-- student 객체 생성 -->
+    <script src="11_student_crud.js"></script> <!-- crud -->
+    <style>
+        .container {
+            border : 1px solid black;
+            
+            /* 화면을 가운데 정렬시키는 공식. width 값 정하고 margin을 0 auto로 두면 됨 */
+            width: 960px;
+            margin : 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="name">이름 : </label> <input type="text" id="name"><br>
+        <label for="age">나이 : </label> <input type="text" id="age"><br>
+        <label for="num">번호 : </label> <input type="text" id="num"><br>
+        <button class="btn btn-primary" id="create">학생등록</button> <!-- 파란색 버튼 모양-->
+        <button class="btn btn-danger" id="read">학생조회</button>
+        <button class="btn btn-warning" id="update">학생수정</button>
+        <button class="btn btn-dark" id="delete">학생삭제</button>
+        <button class="btn btn-info" id="consolelog">전체조회</button>
+    </div>
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
