@@ -65,5 +65,17 @@
             }
         }
     </script>
+    <script>
+        window.onload = function() {
+            let movingTexts = []
+            for(let i = 0; i<100; i++) {
+                movingTexts.push(new MovingText())
+            }
+            setInterval(function() {
+                for(let i in movingTexts)
+                    movingTexts[i].move()
+            }, 1000/30) //0.03초에 한 번씩 이동
+        }
+    </script>
 </body>
 </html>
