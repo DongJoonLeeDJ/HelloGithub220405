@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //window.onload 대신 딴 거 해보기(우리 자바스크립트 책에 나오는 거)
+        document.addEventListener("DOMContentLoaded", () => 
+        {
+            let sun = document.getElementById('sun')
+            let earth = document.getElementById('earth')
+            let moon = document.querySelector('#moon')
+            sun.style.position = 'fixed' //지금상황에선 absolute써도 됨
+            earth.style.position = 'fixed' //지금상황에선 absolute써도 됨
+            moon.style.position = 'fixed' //지금상황에선 absolute써도 됨
+            sun.style.left = 550+'px'
+            sun.style.top = 200+'px'
+            let earthAngle = 0
+            let moonAngle = 0
+            setInterval(function() 
+            {
+                let earthLeft = 550+150*Math.cos(earthAngle)
+                let earthTop = 200+150*Math.sin(earthAngle)
+                let moonLeft = earthLeft+50*Math.cos(moonAngle)
+                let moonTop = earthTop+50*Math.sin(moonAngle)
+                earth.style.left = earthLeft+'px'
+                earth.style.top = earthTop+'px'
+                moon.style.left = moonLeft+'px'
+                moon.style.top = moonTop+'px'
+                earthAngle+=0.1
+                moonAngle+=0.3
+            }
+            , 1000/30)
+        }
+        )
+    </script>
+</head>
+<body>
+    <h1 id="sun">@</h1>
+    <h1 id="earth">O</h1>
+    <h1 id="moon">*</h1>
+</body>
+</html>
