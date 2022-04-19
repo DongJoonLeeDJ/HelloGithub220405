@@ -23,7 +23,7 @@
         //addEventListner 혹은 onclick 이용해서 output 태그를 눌렀을 때 함수가 실행되게 함
         output.onclick = function() {
             let floor = document.querySelector('#floor').value
-            floor = Number(floor)  //숫자로 변환
+            floor = Number(floor)  //숫자로 변환 // 이거 없어도 되긴 함
             //alert(++floor) //alert : 경고창띄우기, ++floor: 값을 하나 증가시키고 그 다음 출력
             let triangle = ""
             for(let i = 1; i<=floor; i++) 
