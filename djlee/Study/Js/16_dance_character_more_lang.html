@@ -24,9 +24,16 @@
         */
         //이 값이 들어감
         let randomAlphabet = (function() {
-            let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' //길이 26
+            //let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' //길이 26
+            //const는 상수를 의미. let써도 되긴 한데, 변할 일이 없는 값을 굳이
+            //let으로 선언할 이유없다. 변할 일이 없는거라면 const를 쓰자.
+            const alphabet1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            const alphabet2 = "가나다라마바사아자차카타파하"
+            const alphabet3 = "لورم ایپسوم متن ساختگی با "
+            const lang = [alphabet1,alphabet2,alphabet3]
             return function() {
-                return alphabet.charAt(nextRandomInteger(alphabet.length-1)) //charAt이니까 0부터 시작해서 최대 25
+                const myalpha = lang[nextRandomInteger(2)]
+                return myalpha.charAt(nextRandomInteger(myalpha.length-1)) //charAt이니까 0부터 시작해서 최대 25
             }
         })() //무명의 함수를 호출한다. 즉 return function() 이걸 호출한다는 거다.
         //randomAlphabet() 이렇게 호출하면 A부터 Z까지 중 하나의 글자가 나온다.
