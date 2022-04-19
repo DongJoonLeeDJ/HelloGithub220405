@@ -1,0 +1,8 @@
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\DeepCopy_ShallowCopy\DeepCopy_ShallowCopy\bin\Debug\DeepCopy_ShallowCopy.exe.config
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\DeepCopy_ShallowCopy\DeepCopy_ShallowCopy\bin\Debug\DeepCopy_ShallowCopy.exe
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\DeepCopy_ShallowCopy\DeepCopy_ShallowCopy\bin\Debug\DeepCopy_ShallowCopy.pdb
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\DeepCopy_ShallowCopy\DeepCopy_ShallowCopy\obj\Debug\DeepCopy_ShallowCopy.csproj.AssemblyReference.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\DeepCopy_ShallowCopy\DeepCopy_ShallowCopy\obj\Debug\DeepCopy_ShallowCopy.csproj.SuggestedBindingRedirects.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\DeepCopy_ShallowCopy\DeepCopy_ShallowCopy\obj\Debug\DeepCopy_ShallowCopy.csproj.CoreCompileInputs.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\DeepCopy_ShallowCopy\DeepCopy_ShallowCopy\obj\Debug\DeepCopy_ShallowCopy.exe
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\DeepCopy_ShallowCopy\DeepCopy_ShallowCopy\obj\Debug\DeepCopy_ShallowCopy.pdb
