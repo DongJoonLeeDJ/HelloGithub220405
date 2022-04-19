@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //알파벳 중 하나를 뽑아냄
+        //x,y 좌표를 랜덤하게 지정할 때도 쓰임
+        //0부터 limit나 limit-1까지의 값을 랜덤하게 뽑아냄(정수값)
+        function nextRandomInteger(limit) {
+            return Math.round(Math.random()*limit)
+        }
+        //function(){} 대신에 ()=>{} 이거 써도 됨
+        //함수를 리턴하는 함수
+        //결국엔 randomAlphabet에  
+        /*
+        function() {
+                return alphabet.charAt(nextRandomInteger(alphabet.length-1)) //charAt이니까 0부터 시작해서 최대 25
+            }
+        */
+        //이 값이 들어감
+        let randomAlphabet = (function() {
+            //let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' //길이 26
+            //const는 상수를 의미. let써도 되긴 한데, 변할 일이 없는 값을 굳이
+            //let으로 선언할 이유없다. 변할 일이 없는거라면 const를 쓰자.
+            const alphabet1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            const alphabet2 = "가나다라마바사아자차카타파하"
+            const alphabet3 = "لورم ایپسوم متن ساختگی با "
+            const lang = [alphabet1,alphabet2,alphabet3]
+            return function() {
+                const myalpha = lang[nextRandomInteger(2)]
+                return myalpha.charAt(nextRandomInteger(myalpha.length-1)) //charAt이니까 0부터 시작해서 최대 25
+            }
+        })() //무명의 함수를 호출한다. 즉 return function() 이걸 호출한다는 거다.
+        //randomAlphabet() 이렇게 호출하면 A부터 Z까지 중 하나의 글자가 나온다.
+
+        //속도도 랜덤하게 정함
+        function randomSpeed(maxSpeed) {
+            return Math.random()*maxSpeed - Math.random()*maxSpeed
+        }
+    </script>
+    <script>
+        //글자가 움직일 수 있는 범위 지정
+        let canvasWidth = 700
+        let canvasHeight = 400
+        function MovingText() //객체 만드는 것. 생성자
+        {
+            this.x = nextRandomInteger(canvasWidth) //0부터 canvasWidth까지의 값 중 하나가 나옴
+            this.y = nextRandomInteger(canvasHeight)//0부터 canvasHeight 값 중 하나가 나옴
+            this.vx = randomSpeed(10)
+            this.vy = randomSpeed(10)
+
+            this.b = document.createElement('h1') //h1태그 만듦
+            this.b.innerText = randomAlphabet()
+            this.b.style.position = 'absolute' //fixed를 해도 됨
+            document.body.appendChild(this.b) //body태그에 this.b 삽입
+            this.move = function() {
+                if(this.x<0 || this.x>canvasWidth) //글자가 벗어나면 방향을 바꾼다.
+                    this.vx *= -1 
+                if(this.y<0 || this.y>canvasHeight)
+                    this.vy *= -1
+                this.x += this.vx //vx, vy만큼 값을 더해서 이동시킴
+                this.y += this.vy
+
+                //아까 만든 h1 태그(b)의 위치를 이동시킴
+                this.b.style.left = this.x+'px'
+                this.b.style.top = this.y+'px'
+            }
+        }
+    </script>
+    <script>
+        window.onload = function() {
+            let movingTexts = []
+
+            //let mycolors = ['red', 'green', 'blue']
+            //let backcolor = ['gray', 'snow']
+
+            for(let i = 0; i<100; i++) {
+                movingTexts.push(new MovingText())
+            }
+            setInterval(function() {
+                for(let i in movingTexts) {
+                    movingTexts[i].move()
+                    
+                   //movingTexts[i].b.style.color=mycolors[nextRandomInteger(2)]
+
+                    //document.body.style.backgroundColor
+                    //=backcolor[nextRandomInteger(1)]
+
+                    //rgb(0,0,0) - 검정 부터 rgb(255,255,255) - 흰색 중 하나의 색상을 출력
+                    movingTexts[i].b.style.color = 
+                    `rgb(${nextRandomInteger(255)},${nextRandomInteger(255)},${nextRandomInteger(255)})`
+                    document.body.style.backgroundColor = 
+                    `rgb(${nextRandomInteger(255)},${nextRandomInteger(255)},${nextRandomInteger(255)})`
+                }
+            }, 1000/30) //0.03초에 한 번씩 이동
+        }
+
+    </script>
+
+    <!-- لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت  -->
+    <!-- לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית סחטיר בלובק. -->
+    <!-- 抓住建立再度為主都不討論區漢化不承擔加上正式引用改善一笑，好激動努力辦公本網完全適用門口原料，鏡頭強大你是他說看看模樣，零售用途值得武器有限確定個性本類打造話題，不少就算，父親資源職責現場我把品質，農民隊伍很多人傳播本科，自從私人比賽讓你教育活動，女孩那。 -->
+</body>
+</html>
