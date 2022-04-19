@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <style>
+        .red {border : 3px solid red}
+        .aqua{background-color: aqua;}
+    </style>
+</head>
+<body>
+    <h1 id="first">Lorem, ipsum. Lorem, ipsum.</h1>
+    <h1 id="second">Lorem, ipsum dolor. Lorem, ipsum dolor.</h1>
+    <div id="test">안녕하세요</div>
+    <div id="test_js">안녕히 가세요.</div>
+    <script>
+        //js로 태그 선택하고 설정
+        let firstTag = document.querySelector('#first')
+        firstTag.style.color='red'
+        firstTag.style.backgroundColor='pink'
+        let test_js = document.querySelector('#test_js')
+        test_js.setAttribute('class', 'aqua')
+        test_js.className += ' red'
+        //jQ로 태그 선택하고 설정
+        //jQ의 핵심은 $
+        //$ 가 바로 document를 의미
+        //괄호 안에 style태그에서 쓰는 선택자를 이용해서 태그를 선택하는 게 가능
+        //document.querySelector도 jQ를 따라 한 것
+        //체이닝 메소드
+        //계속 점만 이어붙이면 css를 계속해서 연달아서 설정하는 것이 가능.
+        $('#second').css('color', 'green').css('background-color', 'springgreen').css('border', '3px solid black')
+        $('#test').addClass('red')
+    </script>
+
+
+</body>
+</html>
