@@ -15,12 +15,10 @@
             let mars = document.getElementById('mars')
 
 
-            sun.innerHTML="<img src=\"sun.png\">"
+            sun.innerHTML='<img src="sun.png">'
             earth.innerHTML="<img src=\"earth.png\">"
             moon.innerHTML="<img src=\"moon.png\">"
             mars.innerHTML="<img src=\"mars.png\">"
-            document.body.style.background = "nightsky.jpg"
-
 
             sun.style.position = 'fixed' //지금상황에선 absolute써도 됨
             earth.style.position = 'fixed' //지금상황에선 absolute써도 됨
@@ -64,7 +62,7 @@
         )
     </script>
 </head>
-<body>
+<body background="nightsky.jpg">
     <h1 id="sun">@</h1>
     <h1 id="earth">O</h1>
     <h1 id="moon">*</h1>
