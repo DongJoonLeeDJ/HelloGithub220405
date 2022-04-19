@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //알파벳 중 하나를 뽑아냄
+        //x,y 좌표를 랜덤하게 지정할 때도 쓰임
+        //0부터 limit나 limit-1까지의 값을 랜덤하게 뽑아냄(정수값)
+        function nextRandomInteger(limit) {
+            return Math.round(Math.random()*limit)
+        }
+        //function(){} 대신에 ()=>{} 이거 써도 됨
+        //함수를 리턴하는 함수
+        //결국엔 randomAlphabet에  
+        /*
+        function() {
+                return alphabet.charAt(nextRandomInteger(alphabet.length-1)) //charAt이니까 0부터 시작해서 최대 25
+            }
+        */
+        //이 값이 들어감
+        let randomAlphabet = (function() {
+            let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' //길이 26
+            return function() {
+                return alphabet.charAt(nextRandomInteger(alphabet.length-1)) //charAt이니까 0부터 시작해서 최대 25
+            }
+        })() //무명의 함수를 호출한다. 즉 return function() 이걸 호출한다는 거다.
+        //randomAlphabet() 이렇게 호출하면 A부터 Z까지 중 하나의 글자가 나온다.
+
+        //속도도 랜덤하게 정함
+        function randomSpeed(maxSpeed) {
+            return Math.random()*maxSpeed - Math.random()*maxSpeed
+        }
+    </script>
+    <script>
+        //글자가 움직일 수 있는 범위 지정
+        let canvasWidth = 700
+        let canvasHeight = 400
+        function MovingText() //객체 만드는 것. 생성자
+        {
+            this.x = nextRandomInteger(canvasWidth) //0부터 canvasWidth까지의 값 중 하나가 나옴
+            this.y = nextRandomInteger(canvasHeight)//0부터 canvasHeight 값 중 하나가 나옴
+            this.vx = randomSpeed(10)
+            this.vy = randomSpeed(10)
+
+            this.b = document.createElement('h1') //h1태그 만듦
+            this.b.innerText = randomAlphabet()
+            this.b.style.position = 'absolute' //fixed를 해도 됨
+            document.body.appendChild(this.b)
+            this.move = function() {
+                if(this.x<0 || this.x>canvasWidth) //글자가 벗어나면 방향을 바꾼다.
+                    this.vx *= -1 
+                if(this.y<0 || this.y>canvasHeight)
+                    this.vy *= -1
+                this.x += this.vx //vx, vy만큼 값을 더해서 이동시킴
+                this.y += this.vy
+
+                //아까 만든 h1 태그(b)의 위치를 이동시킴
+                this.b.style.left = this.x+'px'
+                this.b.style.top = this.y+'px'
+            }
+        }
+    </script>
+</body>
+</html>
