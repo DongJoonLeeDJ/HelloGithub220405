@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //window.onload 대신 딴 거 해보기(우리 자바스크립트 책에 나오는 거)
+        document.addEventListener("DOMContentLoaded", () => 
+        {
+            let sun = document.getElementById('sun')
+            let earth = document.getElementById('earth')
+            let moon = document.querySelector('#moon')
+            let mars = document.getElementById('mars')
+
+
+            sun.innerHTML="<img src=\"sun.png\">"
+            earth.innerHTML="<img src=\"earth.png\">"
+            moon.innerHTML="<img src=\"moon.png\">"
+            mars.innerHTML="<img src=\"mars.png\">"
+            document.body.style.background = "nightsky.jpg"
+
+
+            sun.style.position = 'fixed' //지금상황에선 absolute써도 됨
+            earth.style.position = 'fixed' //지금상황에선 absolute써도 됨
+            moon.style.position = 'fixed' //지금상황에선 absolute써도 됨
+            mars.style.position = 'fixed'
+
+            //태양에 대해서도 이렇게 적어두면 오타날 일이 적어진다.
+            const sunLeft = 550
+            const sunTop = 300
+
+            sun.style.left = sunLeft+'px'
+            sun.style.top = sunTop+'px'
+            let earthAngle = 0
+            let moonAngle = 0
+            let marsAngle = 0
+            setInterval(function() 
+            {
+                let earthLeft = sunLeft+150*Math.cos(earthAngle)
+                let earthTop = sunTop+150*Math.sin(earthAngle)
+                let moonLeft = earthLeft+50*Math.cos(moonAngle)
+                let moonTop = earthTop+50*Math.sin(moonAngle)
+                //태양을 중심으로 돈다.
+                //지구보다 태양이랑 더 멀다. 그래서 150대신 250
+                let marsLeft =  sunLeft+250*Math.cos(marsAngle)
+                let marsTop =   sunTop+250*Math.sin(marsAngle)
+
+                earth.style.left = earthLeft+'px'
+                earth.style.top = earthTop+'px'
+                moon.style.left = moonLeft+'px'
+                moon.style.top = moonTop+'px'
+                
+                mars.style.left = marsLeft+'px'
+                mars.style.top = marsTop+'px'
+
+                earthAngle+=0.1
+                moonAngle+=0.3
+                marsAngle+=0.05
+            }
+            , 1000/30)
+        }
+        )
+    </script>
+</head>
+<body>
+    <h1 id="sun">@</h1>
+    <h1 id="earth">O</h1>
+    <h1 id="moon">*</h1>
+    <h1 id="mars">♂</h1>
+</body>
+</html>
