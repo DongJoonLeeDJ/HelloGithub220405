@@ -21,6 +21,7 @@
 (편한걸로 해보세요)
 
 8. js와 jQ로 모두 해보세요.
-
+힌트 : 태그 만들기 -> let newStudentInfo = $('<h1></h1>')
+       value 찾기 -> name.val()
 
 
