@@ -6,7 +6,7 @@ window.onload = () => {
     const name = document.querySelector("#name") //쌍따옴표나 따옴표나 둘 중 아무거나 써도 된다.
     const gender = document.querySelector("#gender")
     const beonho = document.querySelector("#beonho")
-
+    //name=100
     const print = document.querySelector("#print")
     const reset = document.querySelector("#reset")
     const printOrderBy = document.querySelector("#printOrderBy")
@@ -45,8 +45,16 @@ window.onload = () => {
 
     printOrderBy.onclick = function() {
         //학생 등록할 때 이미 있는 번호를 등록하는 건 아닌지 먼저 체크
-        const idx = students.findIndex(item => item.번호 === Number(beonho.value))
-        
+        const idx = students.findIndex(aaa => aaa.번호 === Number(beonho.value))
+        /*
+        const idx = students.findIndex (
+            function(item) {
+                return item.번호 === Number(beonho.value)
+            }
+        )
+        */
+
+
         console.log('idx='+idx)
         console.log(students)
         if(idx!=-1)
@@ -62,10 +70,19 @@ window.onload = () => {
         //두 개의 객체를 가져와서, 여기선 두 객체의 번호값을 가지고 정렬함
         //값이 양수,0,음수냐에 따라서 정렬이 달라짐
         
+        console.log(students) //sort하기 전에 찍어도 개발자도구에서 콘솔 확인해보면 정렬 다 되어 있는 게 나타나있다.
+                              //가장 최근 상태의 students 상태가 찍힘
+                              // sort 전 후 상태를 console로 찍어보고 싶으면 아래처럼 for문을 이용해 하나하나 출력해봐야 함
         for(let item of students)
             console.log(item)
 
-        students.sort((a,b) => a.번호-b.번호)
+        students.sort((ㅁ,ㅂ) => ㅁ.번호-ㅂ.번호)
+
+        /*
+        students.sort(function(a,b){
+            return a.번호 - b.번호
+        })
+        */
 
         for(let item of students)
             console.log(item)
