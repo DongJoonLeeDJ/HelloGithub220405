@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Student {
+            //function을 생성자로 썼었는 데, class 문법에선 constructor라는 생성자가 이미 존재함
+            constructor(이름, 국어, 영어, 수학) 
+            {
+                this.이름 = 이름
+                this.국어 = 국어
+                this.영어 = 영어
+                this.수학 = 수학
+            }
+            //메소드 추가
+            getsum() {
+                return this.국어+this.영어+this.수학
+            }
+            toString() {
+                return `${this.이름}\t${this.getsum()}점`
+            }
+        }
+
+        class EliteStudent extends Student {
+            constructor(이름,국어,영어,수학,지망대학) {
+                super(이름,국어,영어,수학) //상위클래스(=조상클래스)의 생성자 호출
+                this.지망대학 = 지망대학
+            }
+            hardStudy() {
+                console.log(this.지망대학+"을 향한 질주!!!")
+            }
+            //toString을 오버라이딩
+            toString() {
+                return `${this.이름}님의 지망대학 : ${this.지망대학}`
+            }
+        }
+
+        //const는 상수가 맞다.
+        //const test = "abc"
+        //test=111
+
+        //const 배열의 특징
+        //안에 값도 변경할 수 있고 새로 추가도 되고 다 된다.
+        //대신에... 새롭게 정의하는 게 안 된다.
+        const students = []
+        students.push(new Student('이동준',10,20,30))
+        //students[0].이름 = "리동준"
+        //console.log(students[0].toString())
+        //students[0] = new Student("헤이딜러",1,2,3)
+        //console.log(students[0].toString())
+        //students.push(1)
+        //students = [] //이런식으로 재정의가 안 됨!!!
+        students.push(new Student("한준범",100,100,100))
+        students.push(new EliteStudent("박나은",100,100,100,"서울대학교"))
+        for(const item of students)
+            console.log(item.toString())
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

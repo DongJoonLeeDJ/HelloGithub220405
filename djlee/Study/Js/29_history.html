@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1:hover { color:red; cursor: pointer;}
+        h2:hover {color : blue; cursor: pointer;}
+    </style>
+</head>
+<body>
+    <h1>30_history2.html로 이동</h1>
+    <a href="30_history2.html">30_history2.html로 이동</a>
+    <h2>앞으로 이동</h2>
+    <h3>앞앞으로 이동</h3>
+    <script>
+        document.querySelector('h1').onclick = () => {
+            location.href = '30_history2.html'
+        }
+        //go 전전단계나 앞앞단계등 다양하게 이동할 수 있음
+        document.querySelector('h2').onclick = function() {
+            history.go(1) /*history.forward()*/
+        }
+        document.querySelector('h3').onclick = () => {
+            history.go(2)
+        }
+
+    </script>
+</body>
+</html>

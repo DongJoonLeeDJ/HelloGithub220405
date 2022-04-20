@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        class Customer {
+            static counter = 0 //회원수, 모든 Customer 객체가 공유
+            #age // private 표시
+            constructor(id, name, age)
+            {
+                this.id = id
+                this.name = name
+                if(age <= 0)
+                    throw "나이는 1 이상이어야 합니다."
+                this.#age = age
+                Customer.counter++ //생성자 호출할 때마다, 고객이 생성되므로 회원수를 늘려준다.
+            }
+            get age() 
+            {
+                console.log("get age 호출")
+                return this.#age
+            }
+            set age(value)
+            {
+                console.log("set age 호출")
+                if(value<=0)
+                    throw "나이는 1이상으로 부탁드립니다."
+                this.#age = value
+            }
+        }
+        //private
+        //static
+        //getter setter (get;set;)
+
+    </script>
+    <script>
+        let a = new Customer("ldjgood", "이동준", 10)
+        let b = new Customer("abcd", "문찬호", 30)
+        console.log(a.age)
+        console.log(Customer.counter)//회원수 2명이라고 나옴
+        a.age = -1
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

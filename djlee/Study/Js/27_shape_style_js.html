@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box 
+        {
+            background-color: springgreen;
+            width: 60px;
+            height: 60px;
+            float: left; /* grid나 flex를 쓰는 경우도 많지만 float:left로 수평정렬도 한다. */
+            margin: 15px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => 
+        {
+            //let list = document.querySelectorAll('.box.border_box') //클래스명이 box border_box인 거 선택함
+            let list = document.getElementsByClassName('box border_box')//클래스명이 box border_box인 거 선택
+            for(let item of list)
+                item.style.border = "4px solid blue"
+        }
+    )
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box border_box"></div>
+    <div class="box"></div>
+    <div class="box border_box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box border_box"></div>
+</body>
+</html>

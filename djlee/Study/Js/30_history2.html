@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>안녕</h1>
+    <h2>화상 갈끄니까~</h2>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates doloribus ut quaerat autem minima veritatis nam excepturi est provident iste quam nulla consequatur debitis incidunt, amet harum atque commodi deserunt!
+    <script>
+        document.querySelector('h1').onclick = () => {
+            history.go(-1)
+        }
+        //h2태그가 하나가 아닐 수도 있으므로 [0]과 같이 인덱스 이거 적어야 됨
+        //querySelector같은 경우엔 무조건 첫번째꺼 하나만 선택함. querySelectorAll썼다면 [0]처럼 인덱스 써야 함 
+        document.getElementsByTagName('h2')[0].onclick = () => {
+            location.href = "23_mars_pic.html"
+        }
+    </script>
+</body>
+</html>
