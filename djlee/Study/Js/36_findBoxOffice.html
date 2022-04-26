@@ -72,9 +72,38 @@
                 console.log(result)
                 const jsonObj = result
 
-                const BoxOfficeResult = jsonObj['boxOfficeResult']
-                
-            })
+                const boxOfficeResult = jsonObj['boxOfficeResult']
+                boxOfficeType.textContent = boxOfficeResult['boxofficeType']
+                showRange.textContent = boxOfficeResult['showRange']
+                const movieList = boxOfficeResult['dailyBoxOfficeList']
+
+                //forEach js에서 쓰는 문법
+                //c#의 foreach보면 된다.
+                //item : movieList에 있는 내용들
+                movieList.forEach (
+                    item => {
+                        const myLi = document.createElement('li')
+                        const myDiv = document.createElement('div')
+                        const mh2 = document.createElement('h2')
+                        const mp1 = document.createElement('p')
+                        const mp2 = document.createElement('p')
+                        const mp3 = document.createElement('p')
+                        //영화명/개봉일/누적관객수/순위변동
+                        mh2.textContent = item['movieNm']
+                        mp1.textContent = "개봉일 : " + item['openDt']
+                        mp2.textContent = "누적관객수 :" +item['audiAcc']
+                        mp3.textContent = "순위변동:"+item['rankInten']
+
+                        myLi.appendChild(myDiv)
+                        myDiv.appendChild(mh2)
+                        myDiv.appendChild(mp1)
+                        myDiv.appendChild(mp2)
+                        myDiv.appendChild(mp3)
+                        myUl.appendChild(myLi)
+                    }
+                )
+
+            }).catch((err)=>{console.log("error"); console.log(err)})
         }
     </script>
 </body>
