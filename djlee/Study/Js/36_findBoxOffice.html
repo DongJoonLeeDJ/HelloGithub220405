@@ -54,7 +54,28 @@
     <script>
         window.onload = () => {
             const key = "43acf2413769000d8f1218245a94a6ba"
-            const apiUrl = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${key}&targetDt=${20220425}`
+            let date = (item=>new Date(item.setDate(item.getDate()-1)))(new Date)
+            console.log(date)
+            console.log(date.getMonth())
+            let month = date.getMonth() //현재 1월이면 0을 반환함.
+            if(Number(month)<9)         //10월이면 9를 반환
+            {
+                month = '0'+(Number(month)+1)
+            }
+            else if(Number(month)==9)
+                month = '10'
+            else{
+                month = Number(month)+1
+            }
+            let day = date.getDate()
+            console.log(date.getDate()) //1일이면 1로 그대로 출력이 잘 됨
+            if(Number(day)<=9)
+            {
+                day = '0'+(Number(day))
+            }
+            date = date.getFullYear()+""+month+""+day
+            console.log("date="+date)
+            const apiUrl = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${key}&targetDt=${date}`
             console.log(apiUrl)
 
             //클래스이긴 하지만 querySelector라서 어차피 처음 1개만 선택함 클래스가 boxOfficeType인 태그가 여러 개 있어도
@@ -106,5 +127,6 @@
             }).catch((err)=>{console.log("error"); console.log(err)})
         }
     </script>
+
 </body>
 </html>
