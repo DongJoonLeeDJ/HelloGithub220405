@@ -77,6 +77,7 @@
                     day = '0'+(Number(day))
                 }
                 date = date.getFullYear()+""+month+""+day
+                // let searchDay = year + "" + (("00") + month).slice(-2) + ("00" + date).slice(-2)
                 console.log("date="+date)
                 const apiUrl = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${key}&targetDt=${date}`
                 console.log(apiUrl)
