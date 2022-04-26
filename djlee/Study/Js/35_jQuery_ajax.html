@@ -10,7 +10,7 @@
 </head>
 <body>
     
-    <h1>가격 현황</h1>
+    <h1>이름 현황</h1>
 
     <script>
         $.ajax (
@@ -19,7 +19,7 @@
                 dataType:"json",
                 success : function(data) {
                     let h1 = $('<h1></h1>')
-                    h1.text("가격은"+data.price+"입니다.")
+                    h1.text("이름은"+data.Name+"입니다.")
                     $('body').append(h1)
                 },
                 error:function(r,s,e){}
