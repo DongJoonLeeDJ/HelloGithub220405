@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*웹브라우저마다 공백이 조금씩 다른 데 그걸 통일해줌*/
+        * {
+            margin : 0;
+            padding : 0;
+        }
+        body {
+            text-align: center;
+            background-color: pink;
+        }
+        .boxOffice /*div 태그*/ {
+            width:500px;
+            margin : 20px auto;
+            padding : 5px;
+            border : 3px dotted white
+        }
+        /*script 태그가 제대로 동작해야 결과 확인 가능, boxOffice 안에 있음*/
+        ul {
+            width: 100%;
+            padding:8px;
+            list-style-position: inside;
+            text-align: left;
+            list-style-type: none; /*ul태그면 앞에 동그라미 있는 데, 그거 없애준다*/
+        }
+        ul li {
+            width: 92%;
+            margin:5px 0;
+            background-color: aquamarine;
+            padding : 5px 10px;
+            cursor: pointer;
+        }
+        ul li:hover {
+            background-color: salmon;
+        }
+         /*script 태그가 제대로 동작해야 결과 확인 가능, boxOffice 안에 있음*/
+    </style>
+</head>
+<body>
+    <h1>영화 top 10</h1>
+    <p>최신 영화 순위 알려줌</p>
+    <!--div.boxOffice-->
+    <div class="boxOffice">
+        <h2 class="boxOfficeType"></h2>
+        <p class="showRange"></p>
+        <ul class="boxOfficeList"></ul>
+    </div>
+    <script>
+        window.onload = () => {
+            const key = "43acf2413769000d8f1218245a94a6ba"
+            const apiUrl = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${key}&targetDt=${20220425}`
+            console.log(apiUrl)
+
+            //클래스이긴 하지만 querySelector라서 어차피 처음 1개만 선택함 클래스가 boxOfficeType인 태그가 여러 개 있어도
+            //하나만 선택한다는 것이다.
+            const boxOfficeType = document.querySelector('.boxOfficeType')
+            const showRange = document.querySelector('.showRange')
+            const myUl = document.querySelector('.boxOfficeList')
+
+            //XMLHttpRequest 말고 js에선 fetch를 쓰는 것이 더 최신이다.
+            fetch(apiUrl).then( (response) => {
+                if(!response.ok)
+                    throw new Error("오류!!!")
+                return response.json() //오류가 아니면
+            }).then(function(result) {
+                console.log(result)
+                const jsonObj = result
+
+                const BoxOfficeResult = jsonObj['boxOfficeResult']
+                
+            })
+        }
+    </script>
+</body>
+</html>
