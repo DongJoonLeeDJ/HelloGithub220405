@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>안녕 가격은 아래와 같아. 그때 그때 달라.</h1>
+    <script>
+        let ajax = new XMLHttpRequest() //이 방식은 좀 옛날 방식임... 요새 js로 ajax하면 fetch씀
+        //상태가 바뀌었을 때 뭔가를 하게 함
+        //open하고 send하면서 호출되는 함수
+        ajax.onreadystatechange = function()
+        {
+            //통신상태 체크
+            if(this.readyState==4 && this.status==200)
+            {
+
+                console.log(ajax.responseText) //price:990 나올 것이다.
+                let h1 = document.createElement('h1')
+                h1.textContent = JSON.parse(ajax.responseText)['price']
+                document.body.appendChild(h1)
+                /*
+                
+                즉 httpRequest.readyState==4 이것은 데이터를 전부 받은 상태, 완료되었다는 의미이고
+
+                httpRequest.status==200 이것은 서버로부터의 응답상태가 요청에 성공하였다는 의미이네요!!
+
+                */
+            }
+        }
+        ajax.open('GET', 'https://dongjoonleedj.github.io/testWebHosting/myjson.json') //GET 방식으로 해당 URL 접근
+        ajax.send()
+
+    </script>
+</body>
+</html>
