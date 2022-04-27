@@ -1,0 +1,8 @@
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloCSharp\HelloCSharp06\bin\Debug\HelloCSharp06.exe.config
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloCSharp\HelloCSharp06\bin\Debug\HelloCSharp06.exe
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloCSharp\HelloCSharp06\bin\Debug\HelloCSharp06.pdb
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloCSharp\HelloCSharp06\obj\Debug\HelloCSharp06.csproj.AssemblyReference.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloCSharp\HelloCSharp06\obj\Debug\HelloCSharp06.csproj.SuggestedBindingRedirects.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloCSharp\HelloCSharp06\obj\Debug\HelloCSharp06.csproj.CoreCompileInputs.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloCSharp\HelloCSharp06\obj\Debug\HelloCSharp06.exe
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloCSharp\HelloCSharp06\obj\Debug\HelloCSharp06.pdb
