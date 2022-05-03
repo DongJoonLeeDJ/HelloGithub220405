@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWinform", "HelloWinform\HelloWinform.csproj", "{698B1228-EC29-4449-AB46-223D536342FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWinform02", "HelloWinform02\HelloWinform02.csproj", "{65B11E4A-5C00-4B5D-BE06-7A10C23BE999}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{698B1228-EC29-4449-AB46-223D536342FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{698B1228-EC29-4449-AB46-223D536342FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{698B1228-EC29-4449-AB46-223D536342FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{698B1228-EC29-4449-AB46-223D536342FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65B11E4A-5C00-4B5D-BE06-7A10C23BE999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65B11E4A-5C00-4B5D-BE06-7A10C23BE999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65B11E4A-5C00-4B5D-BE06-7A10C23BE999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65B11E4A-5C00-4B5D-BE06-7A10C23BE999}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A26F88EC-82C6-4B05-AA40-C975FCDBBDDB}
+	EndGlobalSection
+EndGlobal

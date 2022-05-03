@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        function doAjax1(){
+            $.ajax({
+                type : "get",            // HTTP method type(GET, POST) 형식이다.
+                url : "http://localhost:8080/memberapi/all",      // 컨트롤러에서 대기중인 URL 주소이다.
+                dataType: "json",
+                success : function(res,result){ // 비동기통신의 성공일경우 success콜백으로 들어옵니다. 'res'는 응답받은 데이터이다.
+                    // res = [{"id":1,"name":null,"email":null,"password":null,"gender":null},
+                    //        {"id":2,"name":null,"email":null,"password":null,"gender":null},
+                    //        {"id":3,"name":"aaa","email":null,"password":null,"gender":null},
+                    //        {"id":4,"name":"aaa","email":"aaa@naver.com","password":null,"gender":null},
+                    //        {"id":5,"name":"홍길동","email":"bbb@naver.com","password":"1234123","gender":null}]
+                    res.map( (item,index)=>{
+                        console.log("index = "+index);
+                        console.log(item.id);
+                        console.log(item.name);
+                        console.log(item.email);
+                        console.log(item.password);
+                        var myhtml = item.id+item.name+item.email+item.password;
+                        $('#select').append(myhtml);
+                    } )
+                },
+                error : function(XMLHttpRequest, textStatus, errorThrown){ // 비동기 통신이 실패할경우 error 콜백으로 들어옵니다.
+                    alert("통신 실패.");
+                }
+            });
+        }
+        function doAjax2(){
+            var n = $('#name').val();
+            var e = $('#email').val();
+            var p = $('#password').val();
+            $.ajax({
+                type : "get",            // HTTP method type(GET, POST) 형식이다.
+                url : "http://localhost:8080/memberapi/add",      // 컨트롤러에서 대기중인 URL 주소이다.
+                data : { 
+                        name: n, 
+                        email: e,
+                        password: p,
+                 },            
+                success : function(res,result,data){ // 비동기통신의 성공일경우 success콜백으로 들어옵니다. 'res'는 응답받은 데이터이다.
+                    console.log(res);
+                    console.log(result);
+                    console.log(data);
+                },
+                error : function(XMLHttpRequest, textStatus, errorThrown){ // 비동기 통신이 실패할경우 error 콜백으로 들어옵니다.
+                    alert("통신 실패.")
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <button onclick="doAjax1()">ajaxall통신</button>
+    <button onclick="doAjax2()">ajaxadd통신</button>
+    <div>
+        name <input type="text" id="name"/><br/>
+        email <input type="text" id="email"/><br/>
+        password <input type="text" id="password"/><br/>
+    </div>
+    <div id="select">
+    </div>
+</body>
+</html>
