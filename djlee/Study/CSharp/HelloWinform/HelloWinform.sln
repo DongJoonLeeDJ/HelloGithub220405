@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWinform02", "HelloWinf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWinform03", "HelloWinform03\HelloWinform03.csproj", "{F9D53A4C-913A-47EB-8605-4A6145F5E8B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMethod", "HeyMethod\HeyMethod.csproj", "{AAC741A7-BF8B-4D3B-AE61-0EE2834715BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F9D53A4C-913A-47EB-8605-4A6145F5E8B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9D53A4C-913A-47EB-8605-4A6145F5E8B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9D53A4C-913A-47EB-8605-4A6145F5E8B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAC741A7-BF8B-4D3B-AE61-0EE2834715BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAC741A7-BF8B-4D3B-AE61-0EE2834715BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAC741A7-BF8B-4D3B-AE61-0EE2834715BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAC741A7-BF8B-4D3B-AE61-0EE2834715BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

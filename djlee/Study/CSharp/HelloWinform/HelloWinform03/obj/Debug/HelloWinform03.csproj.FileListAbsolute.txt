@@ -8,3 +8,4 @@ D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloWinform\HelloWinform03\obj\De
 D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloWinform\HelloWinform03\obj\Debug\HelloWinform03.csproj.CoreCompileInputs.cache
 D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloWinform\HelloWinform03\obj\Debug\HelloWinform03.exe
 D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloWinform\HelloWinform03\obj\Debug\HelloWinform03.pdb
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloWinform\HelloWinform03\obj\Debug\HelloWinform03.Form1.resources

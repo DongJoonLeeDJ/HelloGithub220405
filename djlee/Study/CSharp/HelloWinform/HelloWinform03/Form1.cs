@@ -66,5 +66,56 @@ namespace HelloWinform03
             
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<int> numbers = new List<int>();
+            for(int i = 0; i<7; i++)
+            {
+                Random r = new Random();
+                int num = r.Next(1, 46);
+                if(numbers.Contains(num))
+                {
+                    i--;
+                }
+                else
+                {
+                    numbers.Add(num);
+                }
+            }
+
+            //로또는 정렬됨
+            numbers.Sort();
+            label1.Text = "";
+            foreach (var item in numbers)
+            {
+                label1.Text += item + " ";
+            }
+            //참고!!!
+            HashSet<int> ts = new HashSet<int>(); //중복된 데이터가 그냥 안 들어감...
+            ts.Add(7);
+            ts.Add(7);
+            ts.Add(7);
+            foreach (var item in ts)
+            {
+                Console.WriteLine(item);
+            }
+
+            SortedSet<int> ts2 = new SortedSet<int>();  //중복이 안 들어가고 정렬도 됨
+            ts2.Add(7);
+            ts2.Add(7);
+            ts2.Add(7);
+            ts2.Add(7);
+            ts2.Add(100);
+            ts2.Add(50);
+
+            foreach (var item in ts2)
+            {
+                Console.WriteLine(item);
+            }
+            
+
+
+        }
     }
 }

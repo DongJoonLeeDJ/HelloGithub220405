@@ -21,12 +21,31 @@ namespace HelloWinform
             //그냥 null값이라서 아무 것도 아님...
 
             label_numbers.Text = "";
-            Random rand = new Random();
+            List<int> numbers = new List<int>();
+            for(int i = 0; i<4; i++)
+            {
+                Random rand = new Random();
+                int num = rand.Next(1, 100);
+                if(numbers.Contains(num))
+                {
+                    i--;
+                    continue;
+                }
+                numbers.Add(num);
+            }
+
+            numbers.Sort(); //오름차순 정렬도 해줌
+            
+            button1.Text = numbers[0].ToString();
+            button2.Text = numbers[1].ToString();
+            button3.Text = numbers[2].ToString();
+            button4.Text = numbers[3].ToString();
+            
             //이거 누르면 추가
-            button1.Text = rand.Next(1,100).ToString();
-            button2.Text = rand.Next(1,100).ToString();
-            button3.Text = rand.Next(1,100).ToString();
-            button4.Text = rand.Next(1,100).ToString();
+            //button1.Text = rand.Next(1,100).ToString();
+            //button2.Text = rand.Next(1,100).ToString();
+            //button3.Text = rand.Next(1,100).ToString();
+            //button4.Text = rand.Next(1,100).ToString();
             //이거 누르면 삭제
             button5.Text = button1.Text;
             button6.Text = button2.Text;
