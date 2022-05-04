@@ -48,7 +48,7 @@ namespace HeyMethod
         }
         //인스턴스 메소드
         //학생"별로 각각 다르게" 하는 기능
-        public void introduce()
+        public virtual void introduce() //오버라이드 하는 법. 조상클래스 메소드에 virtual 추가
         {
             Console.WriteLine("이름 : " + Name);
             Console.WriteLine("나이 : " + Age);

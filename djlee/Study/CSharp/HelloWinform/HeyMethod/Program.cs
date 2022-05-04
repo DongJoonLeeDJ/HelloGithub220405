@@ -252,6 +252,10 @@ namespace HeyMethod
             }
 
 
+
+            if(false)
+            {
+            #region GetterSetter
             Circle ccc = new Circle();
             // ccc.radius
             //radius = private -> 즉 가려져 있다.
@@ -262,6 +266,76 @@ namespace HeyMethod
             //public int myRadius {get;set;}
             //이렇게 만들었다.
             ccc.myRadius = 5;
+            #endregion
+
+            }
+
+            ///
+            /// 상속
+            ///
+
+            Student stu1 = new Student();
+            //참고 : 원래 클래스이름은 첫글자가 무조건 대문자!!!
+            oldStudent o_stu1 = new oldStudent();
+            youngStudent y_stu1 = new youngStudent();
+
+            Student.Study();
+            oldStudent.Study();
+            youngStudent.Study();
+
+            stu1.setInfo("이동준", 34, "09");
+            o_stu1.setInfo("김위규", 90, "01");
+            y_stu1.setInfo("김민하", 8, "22");
+            o_stu1.bType = "O";
+            y_stu1.cm = 130.5;
+            y_stu1.kg = 40.7;
+
+            //공통 기능
+            stu1.introduce();
+            o_stu1.introduce(); //어르신이니까 혈액형정보도 같이 소개해주고 싶다.
+            y_stu1.introduce(); //어린이니까 kg, cm도 같이 소개해주고 싶다.
+            
+            //자손 클래스들만 있는 기능
+            o_stu1.play();
+            y_stu1.sleep();
+
+
+            //다형성
+            //다양한 형태를 가질 가능성
+            //왼쪽에 있는 거를...
+            //자신의 자손 클래스로 형변환이 가능하다.
+            //그게 가능하게 하려면 인스턴스 만들 때 자손클래스로 인스턴스를 만들어야 한다.
+            Student stu2 = new oldStudent();
+            Student stu3 = new youngStudent();
+            //stu2, stu3는 Student라서 oldStudent, youngStudent의 기능을 수행 못 함
+            //stu2.play
+            //is 검사
+            //as 형변환... 실패시 null값을 반환함
+            if (stu2 is oldStudent)//stu2가 oldStudent로 인스턴스를 만들었는지 체크
+                (stu2 as oldStudent).play(); //형변환
+
+            if((stu2 as oldStudent) !=null)
+            {
+                var student2 = (stu2 as oldStudent);
+                student2.play();
+            }
+
+            //다형성 특징에 의해서 Student, oldStudent, youngStudent 모두
+            //Student 타입의 배열이나 List에 들어갈 수 있다.
+            Student[] students1 = new Student[5];
+            students1[0] = stu1;
+            students1[1] = stu2;
+            students1[2] = stu3;
+            students1[3] = new oldStudent();
+            students1[4] = new youngStudent();
+
+            List<Student> students2 = new List<Student>();
+            students2.Add(stu1);
+            students2.Add(stu2);
+            students2.Add(stu3);
+            students2.Add(new oldStudent());
+            students2.Add(new youngStudent());
+            
 
 
         }

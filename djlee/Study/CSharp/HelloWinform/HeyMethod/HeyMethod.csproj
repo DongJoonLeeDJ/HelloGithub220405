@@ -45,9 +45,11 @@
   <ItemGroup>
     <Compile Include="Car.cs" />
     <Compile Include="Circle.cs" />
+    <Compile Include="oldStudent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="youngStudent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
