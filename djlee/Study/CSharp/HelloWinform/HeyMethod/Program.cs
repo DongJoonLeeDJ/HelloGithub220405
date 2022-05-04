@@ -66,6 +66,38 @@ namespace HeyMethod
                 Console.WriteLine(message);
         }
 
+        /// <summary>
+        /// 참조변수 개념(깊은 복사와 얕은 복사)
+        /// 참조 변수 : 값을 저장하는 게 아니고 메모리 영역을 가리키는 변수
+        /// 혹은 특정 변수를 가리키는 변수.
+        /// </summary>
+        /// <param name="numbers"></param>
+        public static void change(int[] numbers)
+        {
+            for(int i = 0; i<numbers.Length; i++)
+                numbers[i] = 0;
+        }
+        public static void change(int num)
+        {
+            num = 0;
+        }
+        public static void change(ref int num) //얕은 복사라기 보단... 해당 변수 가리키는 참조자를 
+        {                               //활용...(얕은 복사라고 볼 수도 있긴 하다)
+            num = 0;
+        }
+        public static void change(Car car)
+        {
+            car.Price = 0;
+            car.Name = "0";
+        }
+
+        public static void change(Student student)
+        {
+            student.Name = "00";
+            student.Hakbeon = "0000";
+            student.Age = -1;
+        } 
+
         static void Main(string[] args)
         {
             if(false)
@@ -175,6 +207,40 @@ namespace HeyMethod
             Console.WriteLine(c1.Name+c1.Price);
             Console.WriteLine(c2.Name+c2.Price);
 
+            Console.WriteLine("--------------------------");
+            //메소드와 참조변수
+            int number = 111;
+            change(number); //number의 값인 111을 복사해온 num은 0이 되지만, main의 number와는 상관없는 일
+            Console.WriteLine(number);
+
+            //배열도 클래스처럼 얕은 복사를 쓴다!
+            int[] numbers = new int[] { 10, 20, 30 };
+            change(numbers); //main에는 10,20,30인데... 이 메소드 거치고 나서
+            foreach (var item in numbers) //안의 값들이 모두 0으로 바뀜
+            {
+                Console.WriteLine(item);
+            }
+
+            Car c = new Car();
+            c.Name = "이동준";
+            c.Price = 5000;
+            change(c); //메소드에서 무슨 짓을 해도 영향을 받지 않는다!!!
+            Console.WriteLine("이름:"+c.Name+" 가격:"+c.Price);
+
+            //ref는 number의 위치(혹은 number를 가리키는 변수)
+            //참조자라고 함
+            change(ref number);
+            Console.WriteLine("number="+number);
+
+            //class도 메소드에서 값 변하면 main에서도 변함
+            Student s_test = new Student();
+            s_test.Name = "이동준선생님";
+            s_test.Age = 13;
+            s_test.Hakbeon = "09";
+            change(s_test);
+            Console.WriteLine(s_test.Name+":"+s_test.Age);
+
+            Console.WriteLine("--------------------------");
         }
     }
 }

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWinform03", "HelloWinf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMethod", "HeyMethod\HeyMethod.csproj", "{AAC741A7-BF8B-4D3B-AE61-0EE2834715BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyWindowform", "HeyWindowform\HeyWindowform.csproj", "{03146BB9-1E74-4679-9912-D37CC3CAE282}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{AAC741A7-BF8B-4D3B-AE61-0EE2834715BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAC741A7-BF8B-4D3B-AE61-0EE2834715BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAC741A7-BF8B-4D3B-AE61-0EE2834715BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03146BB9-1E74-4679-9912-D37CC3CAE282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03146BB9-1E74-4679-9912-D37CC3CAE282}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03146BB9-1E74-4679-9912-D37CC3CAE282}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03146BB9-1E74-4679-9912-D37CC3CAE282}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
