@@ -1,0 +1,10 @@
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloWinform\HelloWinform03\bin\Debug\HelloWinform03.exe.config
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloWinform\HelloWinform03\bin\Debug\HelloWinform03.exe
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloWinform\HelloWinform03\bin\Debug\HelloWinform03.pdb
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloWinform\HelloWinform03\obj\Debug\HelloWinform03.csproj.AssemblyReference.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloWinform\HelloWinform03\obj\Debug\HelloWinform03.csproj.SuggestedBindingRedirects.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloWinform\HelloWinform03\obj\Debug\HelloWinform03.Properties.Resources.resources
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloWinform\HelloWinform03\obj\Debug\HelloWinform03.csproj.GenerateResource.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloWinform\HelloWinform03\obj\Debug\HelloWinform03.csproj.CoreCompileInputs.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloWinform\HelloWinform03\obj\Debug\HelloWinform03.exe
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\HelloWinform\HelloWinform03\obj\Debug\HelloWinform03.pdb
