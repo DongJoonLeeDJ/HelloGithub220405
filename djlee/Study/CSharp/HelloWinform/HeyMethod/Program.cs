@@ -173,6 +173,11 @@ namespace HeyMethod
 
             }
 
+
+            if (false)
+            {
+            #region 깊은 복사와 얕은 복사
+
             //class랑 struct 차이
             //깊은 복사 얕은 복사
 
@@ -241,6 +246,24 @@ namespace HeyMethod
             Console.WriteLine(s_test.Name+":"+s_test.Age);
 
             Console.WriteLine("--------------------------");
+
+            #endregion
+
+            }
+
+
+            Circle ccc = new Circle();
+            // ccc.radius
+            //radius = private -> 즉 가려져 있다.
+            ccc.myR = 5; //myR 통해서 radius에 접근
+            Console.WriteLine(ccc.myR);//myR 통해서 radius에 접근
+
+            //이 코드들을 축약해서
+            //public int myRadius {get;set;}
+            //이렇게 만들었다.
+            ccc.myRadius = 5;
+
+
         }
     }
 }
