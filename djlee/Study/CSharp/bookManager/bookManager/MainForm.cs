@@ -35,9 +35,13 @@ namespace bookManager
 
             //델리게이트 or 람다를 알아야지만 이해할 수 있는 코드
             //label_allBorrowedBook.Text = DataManager.Books.Where(x => x.isBorrowed).Count().ToString();
-            
-            label_allBorrowedBook.Text 
-                = DataManager.Books.Where(delegate (Book x) { return x.isBorrowed; }).Count().ToString();
+
+            //label_allBorrowedBook.Text 
+            //    = DataManager.Books.Where(delegate (Book x) { return x.isBorrowed; }).Count().ToString();
+
+            //메소드를 매개변수로 추가할 수 있음!!!
+            label_allBorrowedBook.Text = DataManager.Books.Where(selectBorrowed).Count().ToString();
+
 
             //연체된 책의 수 반환
             label_allDelayedBook.Text

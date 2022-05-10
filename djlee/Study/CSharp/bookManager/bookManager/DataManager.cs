@@ -79,17 +79,19 @@ namespace bookManager
 
                 //C#책 12단원 LINQ
                 Books = (from item in BooksXElement.Descendants(BOOK)
-                         select new Book()
-                         {
-                             Isbn = item.Element(ISBN).Value,
-                             Name = item.Element(NAME).Value,
-                             Publisher = item.Element(PUBLISHER).Value,
-                             Page = int.Parse(item.Element(PAGE).Value),
-                             UserId = int.Parse(item.Element(USER).Value),
-                             UserName = item.Element(USERNAME).Value,
-                             BorrowedAt = DateTime.Parse(item.Element(BORROWEDAT).Value),
-                             isBorrowed = item.Element(ISBORROWED).Value != "0" ? true : false
-                         }).ToList<Book>();
+                            select new Book()
+                            {
+                                Isbn = item.Element(ISBN).Value,
+                                Name = item.Element(NAME).Value,
+                                Publisher = item.Element(PUBLISHER).Value,
+                                Page = int.Parse(item.Element(PAGE).Value),
+                                UserId = int.Parse(item.Element(USERID).Value),
+                                UserName = item.Element(USERNAME).Value,
+                                BorrowedAt = DateTime.Parse(item.Element(BORROWEDAT).Value),
+                                isBorrowed = item.Element(ISBORROWED).Value != "0" ? true : false
+                            }).ToList<Book>();
+               
+                
 
                 string usersOutput = File.ReadAllText($"./{USERS}.xml");
                 XElement usersXElement = XElement.Parse(usersOutput);

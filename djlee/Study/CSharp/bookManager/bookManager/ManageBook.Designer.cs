@@ -182,6 +182,7 @@
             this.dataGridView_books.RowTemplate.Height = 23;
             this.dataGridView_books.Size = new System.Drawing.Size(1092, 187);
             this.dataGridView_books.TabIndex = 0;
+            this.dataGridView_books.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_books_CellClick);
             // 
             // ManageBook
             // 
