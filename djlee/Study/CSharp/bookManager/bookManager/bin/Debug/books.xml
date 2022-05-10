@@ -1,2 +1,22 @@
 <books>
+	<book>
+		<isbn>1acb123</isbn>
+		<name>동준이달리기</name>
+		<publisher>DJ</publisher>
+		<page>50</page>
+		<borrowedAt>0001-01-01 오전 12:00:00</borrowedAt>
+		<isBorrowed>0</isBorrowed>
+		<userId>0</userId>
+		<username></username>
+	</book>
+	<book>
+		<isbn>1acb123aaq1</isbn>
+		<name>동준이걷기</name>
+		<publisher>DJ</publisher>
+		<page>60</page>
+		<borrowedAt>0001-01-01 오전 12:00:00</borrowedAt>
+		<isBorrowed>0</isBorrowed>
+		<userId>0</userId>
+		<username></username>
+	</book>
 </books>

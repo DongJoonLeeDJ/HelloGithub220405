@@ -75,6 +75,7 @@ namespace bookManager
         private void 사용자관리ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new ManageUser().ShowDialog();
+            refreshScreen();
         }
     }
 }
