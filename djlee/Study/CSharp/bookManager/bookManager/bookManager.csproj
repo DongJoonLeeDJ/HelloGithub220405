@@ -74,6 +74,9 @@
     <EmbeddedResource Include="ManageBook.resx">
       <DependentUpon>ManageBook.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageUser.resx">
+      <DependentUpon>ManageUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
