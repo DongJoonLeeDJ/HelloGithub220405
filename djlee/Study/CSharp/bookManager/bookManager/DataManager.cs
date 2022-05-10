@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace bookManager
 {
@@ -73,6 +74,22 @@ namespace bookManager
             try //파일을 읽어들이는 걸 실패할 경우를 대비한 것
             {
                 //파일이 없거나 기타 등등의 이유로...
+                string booksOutput = File.ReadAllText($"./{BOOKS}.xml"); //books.xml에서 읽어옴
+                XElement BooksXElement = XElement.Parse(booksOutput);
+
+                //C#책 12단원 LINQ
+                Books = (from item in BooksXElement.Descendants(BOOK)
+                         select new Book()
+                         {
+                             Isbn = item.Element(ISBN).Value,
+                             Name = item.Element(NAME).Value,
+                             Publisher = item.Element(PUBLISHER).Value,
+                             Page = int.Parse(item.Element(PAGE).Value),
+                             UserId = int.Parse(item.Element(USER).Value),
+                             UserName = item.Element(USERNAME).Value,
+                             BorrowedAt = DateTime.Parse(item.Element(BORROWEDAT).Value),
+                             isBorrowed = item.Element(ISBORROWED).Value != "0" ? true : false
+                         }).ToList<Book>();
             }
             catch (Exception ex) //파일 읽는 걸 실패하면 Save 호출 후 Load 다시 호출
             {   //파일이 없을 경우를 대비함
