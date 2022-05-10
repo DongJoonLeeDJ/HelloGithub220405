@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.components = new System.ComponentModel.Container();
+            this.menuStrip_manager = new System.Windows.Forms.MenuStrip();
             this.도서관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.사용자관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -51,21 +52,29 @@
             this.textBox_id = new System.Windows.Forms.TextBox();
             this.button_borrow = new System.Windows.Forms.Button();
             this.button_return = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
+            this.label_now = new System.Windows.Forms.Label();
+            this.timer_now = new System.Windows.Forms.Timer(this.components);
+            this.dataGridView_bookManager = new System.Windows.Forms.DataGridView();
+            this.dataGridView_userManager = new System.Windows.Forms.DataGridView();
+            this.menuStrip_manager.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_bookManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_userManager)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menuStrip_manager
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip_manager.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.도서관리ToolStripMenuItem,
             this.사용자관리ToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1164, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip_manager.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip_manager.Name = "menuStrip_manager";
+            this.menuStrip_manager.Size = new System.Drawing.Size(1164, 24);
+            this.menuStrip_manager.TabIndex = 0;
+            this.menuStrip_manager.Text = "menuStrip1";
             // 
             // 도서관리ToolStripMenuItem
             // 
@@ -115,21 +124,23 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.dataGridView_bookManager);
             this.groupBox3.Location = new System.Drawing.Point(12, 179);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(1140, 158);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.groupBox3.Text = "도서 현황";
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.dataGridView_userManager);
             this.groupBox4.Location = new System.Drawing.Point(12, 343);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1140, 201);
+            this.groupBox4.Size = new System.Drawing.Size(688, 201);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
+            this.groupBox4.Text = "사용자 현황";
             // 
             // label1
             // 
@@ -269,25 +280,68 @@
             this.button_return.Text = "반납";
             this.button_return.UseVisualStyleBackColor = true;
             // 
+            // label_now
+            // 
+            this.label_now.AutoSize = true;
+            this.label_now.Location = new System.Drawing.Point(12, 553);
+            this.label_now.Name = "label_now";
+            this.label_now.Size = new System.Drawing.Size(11, 12);
+            this.label_now.TabIndex = 4;
+            this.label_now.Text = "-";
+            // 
+            // timer_now
+            // 
+            this.timer_now.Enabled = true;
+            this.timer_now.Interval = 1000;
+            // 
+            // dataGridView_bookManager
+            // 
+            this.dataGridView_bookManager.AllowUserToAddRows = false;
+            this.dataGridView_bookManager.AllowUserToDeleteRows = false;
+            this.dataGridView_bookManager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_bookManager.Location = new System.Drawing.Point(6, 17);
+            this.dataGridView_bookManager.Name = "dataGridView_bookManager";
+            this.dataGridView_bookManager.ReadOnly = true;
+            this.dataGridView_bookManager.RowTemplate.Height = 23;
+            this.dataGridView_bookManager.Size = new System.Drawing.Size(1128, 132);
+            this.dataGridView_bookManager.TabIndex = 5;
+            // 
+            // dataGridView_userManager
+            // 
+            this.dataGridView_userManager.AllowUserToAddRows = false;
+            this.dataGridView_userManager.AllowUserToDeleteRows = false;
+            this.dataGridView_userManager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_userManager.Location = new System.Drawing.Point(10, 20);
+            this.dataGridView_userManager.Name = "dataGridView_userManager";
+            this.dataGridView_userManager.ReadOnly = true;
+            this.dataGridView_userManager.RowTemplate.Height = 23;
+            this.dataGridView_userManager.Size = new System.Drawing.Size(667, 175);
+            this.dataGridView_userManager.TabIndex = 6;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1164, 556);
+            this.ClientSize = new System.Drawing.Size(1164, 571);
+            this.Controls.Add(this.label_now);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.menuStrip_manager);
+            this.MainMenuStrip = this.menuStrip_manager;
             this.Name = "MainForm";
             this.Text = "bookManager";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip_manager.ResumeLayout(false);
+            this.menuStrip_manager.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_bookManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_userManager)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,7 +349,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip_manager;
         private System.Windows.Forms.ToolStripMenuItem 도서관리ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 사용자관리ToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -318,6 +372,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label_now;
+        private System.Windows.Forms.Timer timer_now;
+        private System.Windows.Forms.DataGridView dataGridView_bookManager;
+        private System.Windows.Forms.DataGridView dataGridView_userManager;
     }
 }
 
