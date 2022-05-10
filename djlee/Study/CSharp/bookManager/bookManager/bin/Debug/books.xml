@@ -19,4 +19,14 @@
 		<userId>0</userId>
 		<username></username>
 	</book>
+	<book>
+		<isbn>345789</isbn>
+		<name>자서전</name>
+		<publisher>한빛미디어</publisher>
+		<page>40</page>
+		<borrowedAt>0001-01-01 오전 12:00:00</borrowedAt>
+		<isBorrowed>0</isBorrowed>
+		<userId>0</userId>
+		<username></username>
+	</book>
 </books>
