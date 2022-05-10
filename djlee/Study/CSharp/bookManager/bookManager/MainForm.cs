@@ -33,10 +33,53 @@ namespace bookManager
                 User user = dataGridView_userManager.CurrentRow.DataBoundItem as User;
                 textBox_id.Text = user.Id.ToString();
             };
-            
 
+            //대여
+            button_borrow.Click += Button_borrow_Click;
+
+            //반납
+            button_return.Click += Button_return_Click;
 
             refreshScreen();
+        }
+
+        private void Button_return_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+        }
+
+        private void Button_borrow_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            if(textBox_isbn.Text.Trim() == "") //Trim : 양 옆의 공백 제거
+                MessageBox.Show("isbn값 입력해요");
+            else if(textBox_id.Text.Trim()=="")
+                MessageBox.Show("사용자 id 입력해요");
+            else
+            {
+                try
+                {
+                    Book book = DataManager.Books.Single(x => x.Isbn == textBox_isbn.Text);
+                    if(book.isBorrowed)
+                    {
+                        MessageBox.Show("이미 빌렸습니다!");
+                        return;
+                    }
+                    User user = DataManager.Users.Single(x => x.Id.ToString() == textBox_id.Text);
+                    book.UserId = user.Id;
+                    book.UserName = user.Name;
+                    book.isBorrowed = true;
+                    book.BorrowedAt = DateTime.Now;
+                    DataManager.Save();
+
+                    refreshScreen();
+                    MessageBox.Show($"{book.Name}이/가 {user.Name}님께 대여되었습니다.");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("존재하지 않는 도서 혹은 사용자!!!");
+                }
+            }
         }
 
         private bool selectBorrowed(Book temp)
