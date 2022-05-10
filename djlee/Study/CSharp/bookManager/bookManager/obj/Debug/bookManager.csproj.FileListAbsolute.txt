@@ -1,0 +1,11 @@
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\bookManager\bookManager\bin\Debug\bookManager.exe.config
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\bookManager\bookManager\bin\Debug\bookManager.exe
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\bookManager\bookManager\bin\Debug\bookManager.pdb
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\bookManager\bookManager\obj\Debug\bookManager.csproj.AssemblyReference.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\bookManager\bookManager\obj\Debug\bookManager.csproj.SuggestedBindingRedirects.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\bookManager\bookManager\obj\Debug\bookManager.MainForm.resources
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\bookManager\bookManager\obj\Debug\bookManager.Properties.Resources.resources
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\bookManager\bookManager\obj\Debug\bookManager.csproj.GenerateResource.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\bookManager\bookManager\obj\Debug\bookManager.csproj.CoreCompileInputs.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\bookManager\bookManager\obj\Debug\bookManager.exe
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\bookManager\bookManager\obj\Debug\bookManager.pdb
