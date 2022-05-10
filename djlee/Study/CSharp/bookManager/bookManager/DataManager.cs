@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,9 +70,49 @@ namespace bookManager
         //도서정보, 유저정보를 모두 가져와야 함
         public static void Load() //xml 파일을 읽어들여서 도서관 현황을 보여주는 것
         {
-
+            try //파일을 읽어들이는 걸 실패할 경우를 대비한 것
+            {
+                //파일이 없거나 기타 등등의 이유로...
+            }
+            catch (Exception ex) //파일 읽는 걸 실패하면 Save 호출 후 Load 다시 호출
+            {   //파일이 없을 경우를 대비함
+                Save();
+                Load();
+            }
         }
 
+        public static void Save()
+        {
+            // 파일이 없을 때도 호출 됨
+            // 새로운 정보가 생겨도 호출 됨
+            // 책을 추가수정삭제하거나 반납혹은 대여 
+            // 회원을 추가수정삭제할 때 호출됨
+            // 기존의 정보대신에 새로운 정보를 덮어쓰는 방식을 쓴다.
+            // 5명의 회원이 있다면, 그 정보를 싹 날리고 6명의 정보로 덮어쓰기 한다.
 
+            string booksOutput = string.Empty; //"" 이랑 똑같은 것
+
+            booksOutput += $"<{BOOKS}>\n";  //<books>
+
+            foreach(var item in Books)
+            {
+                booksOutput += $"\t<{BOOK}>\n";
+                booksOutput += $"\t\t<{ISBN}>{item.Isbn}</{ISBN}>\n";
+                booksOutput += $"\t\t<{NAME}>{item.Name}</{NAME}>\n";
+                booksOutput += $"\t\t<{PUBLISHER}>{item.Publisher}</{PUBLISHER}>\n";
+                booksOutput += $"\t\t<{PAGE}>{item.Page}</{PAGE}>\n";
+                booksOutput += $"\t\t<{BORROWEDAT}>{item.BorrowedAt}</{BORROWEDAT}>\n";
+                booksOutput += $"\t\t<{ISBORROWED}>"+ (item.isBorrowed ? 1 : 0) +$"</{ISBORROWED}>\n";
+                booksOutput += $"\t\t<{USERID}>{item.UserId}</{USERID}>\n";
+                booksOutput += $"\t\t<{USERNAME}>{item.UserName}</{USERNAME}>\n";
+                booksOutput += $"\t</{BOOK}>\n";
+            }
+            booksOutput += $"</{BOOKS}>\n";//</books>
+            Console.WriteLine(booksOutput);
+            File.WriteAllText($"./{BOOKS}.xml", booksOutput);
+
+
+            //throw new NotImplementedException();
+        }
     }
 }
