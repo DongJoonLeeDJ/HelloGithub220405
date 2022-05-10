@@ -111,6 +111,19 @@ namespace bookManager
             Console.WriteLine(booksOutput);
             File.WriteAllText($"./{BOOKS}.xml", booksOutput);
 
+            string usersOutput = string.Empty;
+            usersOutput += $"<{USERS}>\n";
+            foreach(var item in Users)
+            {
+                usersOutput += $"\t<{USER}>\n";
+                usersOutput += $"\t\t<{UID}>{item.Id}</{UID}>\n";
+                usersOutput += $"\t\t<{UNAME}>{item.Name}</{UNAME}>\n";
+                usersOutput += $"\t</{USER}>\n";
+            }
+            usersOutput += $"</{USERS}>\n";
+            Console.WriteLine(usersOutput);
+            File.WriteAllText($"./{USERS}.xml", usersOutput);
+
 
             //throw new NotImplementedException();
         }
