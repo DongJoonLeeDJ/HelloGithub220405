@@ -75,7 +75,7 @@ namespace bookManager
             {
                 //파일이 없거나 기타 등등의 이유로...
                 string booksOutput = File.ReadAllText($"./{BOOKS}.xml"); //books.xml에서 읽어옴
-                XElement BooksXElement = XElement.Parse(booksOutput);
+                XElement BooksXElement = XElement.Parse(booksOutput); //단순 string을 xml 형태로 변환을 함
 
                 //C#책 12단원 LINQ
                 Books = (from item in BooksXElement.Descendants(BOOK)
@@ -90,6 +90,18 @@ namespace bookManager
                              BorrowedAt = DateTime.Parse(item.Element(BORROWEDAT).Value),
                              isBorrowed = item.Element(ISBORROWED).Value != "0" ? true : false
                          }).ToList<Book>();
+
+                string usersOutput = File.ReadAllText($"./{USERS}.xml");
+                XElement usersXElement = XElement.Parse(usersOutput);
+                Users.Clear(); //기존 list 비움
+                foreach(var item in usersXElement.Descendants(USER))
+                {
+                    User temp = new User();
+                    temp.Name = item.Element(UNAME).Value;
+                    temp.Id = int.Parse(item.Element(UID).Value);
+                    Users.Add(temp);
+                }
+
             }
             catch (Exception ex) //파일 읽는 걸 실패하면 Save 호출 후 Load 다시 호출
             {   //파일이 없을 경우를 대비함
