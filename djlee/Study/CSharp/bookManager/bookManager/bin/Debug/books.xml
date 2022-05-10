@@ -1,0 +1,12 @@
+<books>
+	<book>
+		<isbn>aaa</isbn>
+		<name>나는거북이</name>
+		<publisher>거북거북</publisher>
+		<page>300</page>
+		<borrowedAt>0001-01-01 오전 12:00:00</borrowedAt>
+		<isBorrowed>0</isBorrowed>
+		<userId>0</userId>
+		<username></username>
+	</book>
+</books>
