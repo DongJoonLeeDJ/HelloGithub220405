@@ -18,7 +18,24 @@ namespace bookManager
             //대문자 M : month(월)
             //소문자 m : minute(분)
             label_now.Text = DateTime.Now.ToString("yyyy년 MM월 dd일 HH시 mm분 ss초");
+
+            //익명 델리게이트
+            dataGridView_bookManager.CellClick += delegate (object s, DataGridViewCellEventArgs e)
+            {
+                Book book = dataGridView_bookManager.CurrentRow.DataBoundItem as Book;
+                textBox_isbn.Text = book.Isbn;
+                textBox_bookName.Text = book.Name;
+            };
+
+            //람다
+            dataGridView_userManager.CellClick += (s,e) =>
+            {
+                User user = dataGridView_userManager.CurrentRow.DataBoundItem as User;
+                textBox_id.Text = user.Id.ToString();
+            };
             
+
+
             refreshScreen();
         }
 
