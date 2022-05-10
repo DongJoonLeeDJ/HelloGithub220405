@@ -53,6 +53,12 @@ namespace bookManager
                 DataManager.Save();
             }
         }
+       
+        //참고
+        private bool selectUser(User u)
+        {
+            return u.Id == int.Parse(textBox_id.Text);
+        }
 
         private void button_modify_Click(object sender, EventArgs e)
         {
@@ -61,6 +67,7 @@ namespace bookManager
             //조건을 만족하는 것이 List안에 없으면 catch부분으로 빠짐(에러를 throw)
             try
             {
+               // User user = DataManager.Users.Single(selectUser);
                 User user = DataManager.Users.Single(x => x.Id == int.Parse(textBox_id.Text));
                 user.Name = textBox_name.Text;
 
@@ -87,7 +94,23 @@ namespace bookManager
 
         private void button_delete_Click(object sender, EventArgs e)
         {
+            try
+            {
+                //Single과 Remove 사용
+                User user = DataManager.Users.Single(x => x.Id == int.Parse(textBox_id.Text)); //없으면 catch로 빠짐
+                DataManager.Users.Remove(user); //RemoveAt -> 인덱스 이용, Remove는 위치값 혹은 해당 객체의 값을 이용
+                //여기선 위치가 이용됨
 
+                dataGridView_Users.DataSource = null;
+                if (DataManager.Users.Count > 0)
+                    dataGridView_Users.DataSource = DataManager.Users;
+
+                DataManager.Save();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("해당 사용자 없어요.");
+            }
         }
     }
 }
