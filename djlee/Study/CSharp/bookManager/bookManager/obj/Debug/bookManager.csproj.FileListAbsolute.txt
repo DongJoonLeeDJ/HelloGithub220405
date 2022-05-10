@@ -9,3 +9,5 @@ D:\djlee\HelloGithub220405\djlee\Study\CSharp\bookManager\bookManager\obj\Debug\
 D:\djlee\HelloGithub220405\djlee\Study\CSharp\bookManager\bookManager\obj\Debug\bookManager.csproj.CoreCompileInputs.cache
 D:\djlee\HelloGithub220405\djlee\Study\CSharp\bookManager\bookManager\obj\Debug\bookManager.exe
 D:\djlee\HelloGithub220405\djlee\Study\CSharp\bookManager\bookManager\obj\Debug\bookManager.pdb
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\bookManager\bookManager\obj\Debug\bookManager.ManageBook.resources
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\bookManager\bookManager\obj\Debug\bookManager.ManageUser.resources

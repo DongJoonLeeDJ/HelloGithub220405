@@ -293,6 +293,7 @@
             // 
             this.timer_now.Enabled = true;
             this.timer_now.Interval = 1000;
+            this.timer_now.Tick += new System.EventHandler(this.timer_now_Tick);
             // 
             // dataGridView_bookManager
             // 
