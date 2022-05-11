@@ -42,5 +42,15 @@ namespace ParkingCarProgram
         {
             label_now.Text = DateTime.Now.ToString("yyyy년 MM월 dd일 HH시 mm분 ss초");
         }
+
+        //로그파일도 만들고 화면에 기록도 적는 부분
+        private void WriteLog(string contents)
+        {
+            string logContents = $"[{DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss.fff")}]{contents}";
+            DataManager.PrintLog(logContents);
+            MessageBox.Show(contents);
+            listBox_logPrint.Items.Insert(0, logContents); //최신 내용이 위로 올라감
+            //listBox_logPrint.Items.Add(logContents) 했다면 최신 내용이 밑으로 내려감
+        }
     }
 }
