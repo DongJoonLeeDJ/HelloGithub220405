@@ -271,6 +271,7 @@
             this.button_refresh.TabIndex = 5;
             this.button_refresh.Text = "전체 갱신";
             this.button_refresh.UseVisualStyleBackColor = true;
+            this.button_refresh.Click += new System.EventHandler(this.button_refresh_Click);
             // 
             // MainForm
             // 
