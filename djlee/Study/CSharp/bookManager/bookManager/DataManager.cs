@@ -63,6 +63,7 @@ namespace bookManager
 
 
 
+        //정적 생성자
         static DataManager() //딱 한 번만 호출 됨
         {
             Load();

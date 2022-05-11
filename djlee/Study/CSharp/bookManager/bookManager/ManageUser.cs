@@ -33,7 +33,8 @@ namespace bookManager
         {
             //숫자 0은 임의의 값이고, Books에서 userId가 없을 때 나타내는 임의의 값이므로
             //0은 Id로 쓰지 않는다.
-            if(int.Parse(textBox_id.Text) ==0)
+            //-1등도 id로 쓰고 싶지 않다면 == 말고 <= 이렇게 바꾸면 된다.
+            if(int.Parse(textBox_id.Text) <= 0)
             {
                 MessageBox.Show("잘못된 ID입니다.");
                 return;
@@ -98,6 +99,20 @@ namespace bookManager
             {
                 //Single과 Remove 사용
                 User user = DataManager.Users.Single(x => x.Id == int.Parse(textBox_id.Text)); //없으면 catch로 빠짐
+
+                //만약에 해당 유저가 책을 빌린 유저였다면, 삭제 못하게 막기
+                //책을 빌린 유저가 아니라면 catch로 빠질 것
+                try
+                {
+                    Book book = DataManager.Books.Single(x => x.UserId == int.Parse(textBox_id.Text));
+                    MessageBox.Show("ID:"+book.UserId+", 이름:"+book.UserName+"님은 책부터 반납하고 삭제하셔야 합니다.");
+                    return;
+                }
+                catch (Exception) //해당 유저가 책을 안 빌렸을 수도 있으니까 없으면 냅둔다.
+                {
+                }
+
+
                 DataManager.Users.Remove(user); //RemoveAt -> 인덱스 이용, Remove는 위치값 혹은 해당 객체의 값을 이용
                 //여기선 위치가 이용됨
 

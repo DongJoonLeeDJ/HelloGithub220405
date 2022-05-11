@@ -105,6 +105,7 @@ namespace bookManager
         private void dataGridView_books_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //내가 클릭한 1줄을 Book 데이터로 변경
+            //as -> 형변환 키워드
             Book book = dataGridView_books.CurrentRow.DataBoundItem as Book;
             textBox_isbn.Text = book.Isbn;
             textBox_bookName.Text = book.Name;
