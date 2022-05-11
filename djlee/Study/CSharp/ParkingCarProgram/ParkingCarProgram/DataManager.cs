@@ -103,7 +103,7 @@ namespace ParkingCarProgram
             }
             else //해당 공간 없는 경우
             {
-                contents=$"{parkingSpot} 번호 아직 없음"
+                contents = $"{parkingSpot} 번호 아직 없음";
                     return false;
             }
         }
