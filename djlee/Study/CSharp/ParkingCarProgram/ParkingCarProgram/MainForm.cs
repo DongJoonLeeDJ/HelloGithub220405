@@ -199,5 +199,35 @@ namespace ParkingCarProgram
             }
 
         }
+
+        private void button_find_Click(object sender, EventArgs e)
+        {
+            int parkingSpot = int.Parse(textBox_spotNumber.Text);
+            string ParkingCar = findParkingCar(parkingSpot);
+            string contents="";
+            if (ParkingCar == "해당주차공간없음") //공간 자체가 없는 경우
+            {
+                contents = $"해당 주차 공간은 존재하지 않습니다. ({parkingSpot})";
+            }
+            else if (ParkingCar != "") //차가 주차된 경우
+            {
+                contents = $"해당 주차 공간 {parkingSpot}에 주차된 차는 {ParkingCar}입니다.";
+            }
+            else //차가 없는 경우
+            {
+                contents = $"주차공간 {parkingSpot}에는 주차된 차가 없습니다.";
+            }
+            WriteLog(contents);
+        }
+        private string findParkingCar(int parkingSpot)
+        {
+            //Single 안 쓰고 특정 공간 정보 찾기
+            foreach (var item in DataManager.Cars)
+            {
+                if (item.ParkingSpot == parkingSpot)
+                    return item.CarNumber;
+            }
+            return "해당주차공간없음";
+        }
     }
 }
