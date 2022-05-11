@@ -172,6 +172,12 @@ namespace ParkingCarProgram
                 try
                 {
                     ParkingCar car = DataManager.Cars.Single(x => x.ParkingSpot.ToString() == textBox_parkingSpot.Text);
+                    if(car.CarNumber=="")
+                    {
+                        WriteLog(car.ParkingSpot+"에 이미 차가 없습니다.");
+                        return;
+                    }
+
                     string oldCar = car.CarNumber; //기존에 주차된 차
                     car.CarNumber = "";
                     car.DriverName = "";
