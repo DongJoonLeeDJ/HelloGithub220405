@@ -216,7 +216,7 @@ namespace ParkingCarProgram
                 {
                     contents = $"해당 주차 공간 {parkingSpot}에 주차된 차는 {ParkingCar}입니다.";
                 }
-                else //차가 없는 경우
+                else //차가 없는 경우(공백 "")
                 {
                     contents = $"주차공간 {parkingSpot}에는 주차된 차가 없습니다.";
                 }
