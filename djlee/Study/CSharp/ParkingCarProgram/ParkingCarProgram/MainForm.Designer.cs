@@ -137,6 +137,7 @@
             this.dataGridView_parkingManager.RowTemplate.Height = 23;
             this.dataGridView_parkingManager.Size = new System.Drawing.Size(763, 160);
             this.dataGridView_parkingManager.TabIndex = 0;
+            this.dataGridView_parkingManager.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_parkingManager_CellClick);
             // 
             // label2
             // 
@@ -210,6 +211,7 @@
             this.button_parking.TabIndex = 8;
             this.button_parking.Text = "주차";
             this.button_parking.UseVisualStyleBackColor = true;
+            this.button_parking.Click += new System.EventHandler(this.button_parking_Click);
             // 
             // button_parkExit
             // 
@@ -219,6 +221,7 @@
             this.button_parkExit.TabIndex = 9;
             this.button_parkExit.Text = "출차";
             this.button_parkExit.UseVisualStyleBackColor = true;
+            this.button_parkExit.Click += new System.EventHandler(this.button_parkExit_Click);
             // 
             // label6
             // 

@@ -110,5 +110,57 @@ namespace ParkingCarProgram
                 dataGridView_parkingManager.DataSource = DataManager.Cars;
 
         }
+
+        private void dataGridView_parkingManager_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ParkingCar car = dataGridView_parkingManager.CurrentRow.DataBoundItem as ParkingCar;
+            textBox_parkingSpot.Text = car.ParkingSpot.ToString();
+            textBox_carNumber.Text = car.CarNumber;
+            textBox_driverName.Text = car.DriverName;
+            textBox_phoneNumber.Text = car.PhoneNumber;
+        }
+
+        private void button_parking_Click(object sender, EventArgs e)
+        {
+            //주차공간과 차량번호를 입력하게 하고, 해당 공간에 이미 차가 있는지 체크 하고 난 뒤
+            //없다면 update 호출
+            if(textBox_parkingSpot.Text.Trim()=="") //좌우공백 다 지움
+                MessageBox.Show("주차 공간 입력하세요.");
+            else if(textBox_carNumber.Text.Trim()=="")
+                MessageBox.Show("차량 번호 입력하세요.");
+            else
+            {
+                try
+                {
+                    ParkingCar car = DataManager.Cars.Single(x => x.ParkingSpot.ToString() == textBox_parkingSpot.Text);
+                    if(car.CarNumber.Trim()!="")
+                        MessageBox.Show("이미 해당 공간에 차가 있음");
+                    else
+                    {
+                        car.CarNumber = textBox_carNumber.Text;
+                        car.DriverName = textBox_driverName.Text;
+                        car.PhoneNumber = textBox_phoneNumber.Text;
+                        car.ParkingTime = DateTime.Now;
+
+                        dataGridView_parkingManager.DataSource = null;
+                        dataGridView_parkingManager.DataSource = DataManager.Cars;
+
+                        DataManager.Save(car.ParkingSpot, car.CarNumber, car.DriverName, car.PhoneNumber); //주차
+                        string contents = $"주차공간 {textBox_parkingSpot.Text}에 {textBox_carNumber.Text}차를 주차했습니다.";
+                        WriteLog(contents); 
+                    }
+                }
+                catch (Exception)
+                {
+                    string contents = $"주차공간 {textBox_parkingSpot.Text}은/는 없습니다.";
+                    WriteLog(contents);
+                }
+            }
+        }
+
+        private void button_parkExit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
