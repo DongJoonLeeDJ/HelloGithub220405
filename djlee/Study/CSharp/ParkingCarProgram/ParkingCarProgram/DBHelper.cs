@@ -115,6 +115,49 @@ namespace ParkingCarProgram
             }
         }
 
+        //매개변수에 다를 것이다.
+        //매개변수 4개 입력시 주차
+        //5개 입력시 출차
+        public static void updateQuery(int parkingSpot, string carNumber, 
+            string driverName, string phoneNumber, bool isRemove=false)
+        {
+            try
+            {
+                ConnectDB();
+                string sqlcommand;
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.Text;
+                if (isRemove) //출차
+                {
+                    sqlcommand = "update ParkingCar set carNumber='', driverName='', phoneNumber=''," +
+                        " ParkingTime=null where ParkingSpot=@p1";
+                    cmd.Parameters.AddWithValue("@p1", parkingSpot);
+                }
+                else //주차
+                {
+                    sqlcommand = "update ParkingCar set carNumber=@p1, driverName=@p2, phoneNumber=@p3," +
+                          " ParkingTime=@p4 where ParkingSpot=@p5";
+                    cmd.Parameters.AddWithValue("@p1", carNumber);
+                    cmd.Parameters.AddWithValue("@p2", driverName);
+                    cmd.Parameters.AddWithValue("@p3", phoneNumber);
+                    cmd.Parameters.AddWithValue("@p4", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"));
+                    cmd.Parameters.AddWithValue("@p5", parkingSpot);
+                }
+                cmd.CommandText = sqlcommand;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                System.Windows.Forms.MessageBox.Show("update 오류");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
 
     }
 }
