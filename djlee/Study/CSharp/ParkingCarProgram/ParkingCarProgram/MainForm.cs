@@ -122,6 +122,8 @@ namespace ParkingCarProgram
 
         private void button_parking_Click(object sender, EventArgs e)
         {
+
+
             //주차공간과 차량번호를 입력하게 하고, 해당 공간에 이미 차가 있는지 체크 하고 난 뒤
             //없다면 update 호출
             if(textBox_parkingSpot.Text.Trim()=="") //좌우공백 다 지움
@@ -156,10 +158,39 @@ namespace ParkingCarProgram
                     WriteLog(contents);
                 }
             }
+
+
+
         }
 
         private void button_parkExit_Click(object sender, EventArgs e)
         {
+            if (textBox_parkingSpot.Text.Trim() == "") 
+                MessageBox.Show("주차 공간 입력하세요.");
+            else
+            {
+                try
+                {
+                    ParkingCar car = DataManager.Cars.Single(x => x.ParkingSpot.ToString() == textBox_parkingSpot.Text);
+                    string oldCar = car.CarNumber; //기존에 주차된 차
+                    car.CarNumber = "";
+                    car.DriverName = "";
+                    car.PhoneNumber = "";
+                    car.ParkingTime = new DateTime();
+
+                    dataGridView_parkingManager.DataSource = null;
+                    dataGridView_parkingManager.DataSource = DataManager.Cars;
+
+                    DataManager.Save(car.ParkingSpot, car.CarNumber, car.DriverName, car.PhoneNumber,true); //출차
+                    string contents = $"주차공간 {textBox_parkingSpot.Text}에서 {oldCar}차를 출차했습니다.";
+                    WriteLog(contents);
+                }
+                catch (Exception)
+                {
+                    string contents = $"주차공간 {textBox_parkingSpot.Text}은/는 없습니다.";
+                    WriteLog(contents);
+                }
+            }
 
         }
     }
