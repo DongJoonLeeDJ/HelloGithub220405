@@ -54,6 +54,7 @@ namespace ParkingCarProgram
             }
             catch (Exception ex)
             {
+                System.Windows.Forms.MessageBox.Show("select 오류");
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
             }
@@ -63,12 +64,16 @@ namespace ParkingCarProgram
             }
         }
 
+        //주차 공간 추가
         public static void insertQuery(int parkingSpot)
         {
             try
             {
                 ConnectDB();
-                string sqlcommand = "insert into ParkingCar (parkingSpot) values(@p1)";
+                //SQL injection(SQL 삽입) 공격 방지
+                //ID,PW등 로그인할 때 잘못된 SQL문을 삽입하여 (악의적으로) DB에 있는 정보를 탈취하는 공격 방식
+                //이런 공격을 방지하기 위하여 파라메터를 인위적으로 만들고 그 파라메터를 통하여 값을 제공
+                string sqlcommand = "insert into ParkingCar (parkingSpot) values (@p1)";
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
                 cmd.CommandType = CommandType.Text;
@@ -85,6 +90,31 @@ namespace ParkingCarProgram
                 conn.Close();
             }
         }
+
+        //주차 공간 삭제
+        public static void deleteQuery(int parkingSpot)
+        {
+            try
+            {
+                ConnectDB();
+                string sqlcommand = "delete from ParkingCar where ParkingSpot=@p1";
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@p1", parkingSpot);
+                cmd.CommandText = sqlcommand;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                System.Windows.Forms.MessageBox.Show("delete 오류");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
 
     }
 }
