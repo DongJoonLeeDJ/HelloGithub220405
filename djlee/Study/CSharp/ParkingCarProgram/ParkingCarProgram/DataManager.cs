@@ -24,7 +24,14 @@ namespace ParkingCarProgram
             {
                 di.Create(); //해당 폴더가 없으면 생성함
             }
-            using(StreamWriter writer = new StreamWriter(@"ParkingHistory\ParkingHistory.txt", true))
+            //using의 역할
+            //using 구문이 끝나면 Dispose함 즉 메모리를 destroy한다(삭제한다)
+            //끝에 있는 true의 의미
+            //append 를 true로 하겠다. (append 확장)
+            //contents를 덮어쓰지 않고 기존 내용의 밑에다가 새롭게 추가하는 방식으로 가겠다
+            //true부분이 생략되거나 false일 경우에는 PrintLog 호출할 때마다
+            //ParkingHistory.txt에 새로 들어온 contents 내용만 있고 나머진 지워짐...
+            using (StreamWriter writer = new StreamWriter(@"ParkingHistory\ParkingHistory.txt", true))
             {
                 writer.WriteLine(contents);
             }

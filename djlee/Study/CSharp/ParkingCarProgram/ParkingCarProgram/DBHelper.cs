@@ -62,5 +62,29 @@ namespace ParkingCarProgram
                 conn.Close(); //DB는 반드시 닫아야 한다.
             }
         }
+
+        public static void insertQuery(int parkingSpot)
+        {
+            try
+            {
+                ConnectDB();
+                string sqlcommand = "insert into ParkingCar (parkingSpot) values(@p1)";
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@p1", parkingSpot);
+                cmd.CommandText=sqlcommand;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                System.Windows.Forms.MessageBox.Show("insert 오류");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
     }
 }
