@@ -65,5 +65,61 @@ namespace ParkingCarProgram
                 Console.WriteLine(ex.StackTrace);
             }
         }
+
+        //save 메소드 오버로딩
+        //update(주차, 출차용) save
+        public static void Save(int parkingSpot, string carNumber, string driverName, string phoneNumber, bool isRemove=false)
+        {
+            try
+            {
+                DBHelper.updateQuery(parkingSpot, carNumber, driverName, phoneNumber, isRemove);
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+                PrintLog(ex.StackTrace);//오류 내용을 ParkingHistory.txt에 적는다.
+            }
+        }
+        //주차공간 추가/삭제용 save
+        //contents - 로그 적을 때 사용할 메시지
+        public static bool Save(string keyword, int parkingSpot, out string contents)
+        {
+            DBHelper.selectQuery(parkingSpot); //특정 공간 조회
+            contents = "";
+            if (keyword == "insert")
+                return DBInsert(parkingSpot, ref contents);
+            else
+                return DBDelete(parkingSpot, ref contents);
+
+        }
+
+        private static bool DBDelete(int parkingSpot, ref string contents)
+        {
+            if(DBHelper.dt.Rows.Count!=0) //주차공간이 존재할 경우
+            {
+                DBHelper.deleteQuery(parkingSpot);
+                contents = $"주차공간 {parkingSpot} 이/가 삭제 되었습니다.";
+                return true;//삭제 성공
+            }
+            else //해당 공간 없는 경우
+            {
+                contents=$"{parkingSpot} 번호 아직 없음"
+                    return false;
+            }
+        }
+        private static bool DBInsert(int parkingSpot, ref string contents)
+        {
+            if(DBHelper.dt.Rows.Count==0) //주차 공간이 아직 없는 경우
+            {
+                DBHelper.insertQuery(parkingSpot);
+                contents = $"주차공간 {parkingSpot}이/가 추가 되었습니다.";
+                return true; //삽입 성공
+            }
+            else //이미 있는 경우
+            {
+                contents = $"{parkingSpot} 주차 공간이 이미 존재함";
+                return false;
+            }
+        }
     }
 }
