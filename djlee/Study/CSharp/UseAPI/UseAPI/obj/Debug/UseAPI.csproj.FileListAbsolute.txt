@@ -12,3 +12,4 @@ D:\djlee\HelloGithub220405\djlee\Study\CSharp\UseAPI\UseAPI\obj\Debug\UseAPI.pdb
 D:\djlee\HelloGithub220405\djlee\Study\CSharp\UseAPI\UseAPI\bin\Debug\Newtonsoft.Json.dll
 D:\djlee\HelloGithub220405\djlee\Study\CSharp\UseAPI\UseAPI\bin\Debug\Newtonsoft.Json.xml
 D:\djlee\HelloGithub220405\djlee\Study\CSharp\UseAPI\UseAPI\obj\Debug\UseAPI.csproj.CopyComplete
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\UseAPI\UseAPI\obj\Debug\UseAPI.Form2.resources

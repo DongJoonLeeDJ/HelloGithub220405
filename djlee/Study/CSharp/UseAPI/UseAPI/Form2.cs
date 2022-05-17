@@ -16,5 +16,21 @@ namespace UseAPI
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<Locale> locales = KaKaoAPI.Search(textBox1.Text);
+            listBox1.Items.Clear();
+            foreach(Locale item in locales)
+            {
+                listBox1.Items.Add(item);
+            }
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                button1.PerformClick();
+        }
     }
 }
