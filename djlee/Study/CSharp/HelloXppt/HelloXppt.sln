@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloXppt", "HelloXppt\HelloXppt.csproj", "{07EA968E-87C0-404E-A393-7522D1F1FB05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloXppt02", "HelloXppt02\HelloXppt02.csproj", "{9CADE6F9-E328-4C5A-9027-0B53B5BEEA59}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07EA968E-87C0-404E-A393-7522D1F1FB05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07EA968E-87C0-404E-A393-7522D1F1FB05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07EA968E-87C0-404E-A393-7522D1F1FB05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07EA968E-87C0-404E-A393-7522D1F1FB05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CADE6F9-E328-4C5A-9027-0B53B5BEEA59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CADE6F9-E328-4C5A-9027-0B53B5BEEA59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CADE6F9-E328-4C5A-9027-0B53B5BEEA59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CADE6F9-E328-4C5A-9027-0B53B5BEEA59}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C922A05C-331A-49BC-975F-FECD1DD041A7}
+	EndGlobalSection
+EndGlobal
