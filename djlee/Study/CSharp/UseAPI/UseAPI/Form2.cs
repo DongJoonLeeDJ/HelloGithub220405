@@ -32,5 +32,16 @@ namespace UseAPI
             if (e.KeyCode == Keys.Enter)
                 button1.PerformClick();
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex == -1)
+                return; //인덱스값 잘못들어가는거 방지
+
+            Locale ml = listBox1.SelectedItem as Locale; //클릭한 부분은 Locale로 변경
+            object[] pos = new object[] { ml.Lat, ml.Lng };
+            HtmlDocument hdoc = webBrowser1.Document;
+            hdoc.InvokeScript("setCenter", pos);
+        }
     }
 }

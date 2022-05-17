@@ -42,6 +42,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(201, 412);
             this.listBox1.TabIndex = 0;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // textBox1
             // 
@@ -68,6 +69,7 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(585, 384);
             this.webBrowser1.TabIndex = 3;
+            this.webBrowser1.Url = new System.Uri("https://dongjoonleedj.github.io/testapimap/myMapAPI.html", System.UriKind.Absolute);
             // 
             // Form2
             // 
