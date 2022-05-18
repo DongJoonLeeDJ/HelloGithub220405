@@ -1,0 +1,14 @@
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\ObserverPattern\bin\Debug\ObserverPattern.exe.config
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\ObserverPattern\bin\Debug\ObserverPattern.exe
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\ObserverPattern\bin\Debug\ObserverPattern.pdb
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\ObserverPattern\obj\Debug\ObserverPattern.csproj.AssemblyReference.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\ObserverPattern\obj\Debug\ObserverPattern.csproj.SuggestedBindingRedirects.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\ObserverPattern\obj\Debug\ObserverPattern.Form1.resources
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\ObserverPattern\obj\Debug\ObserverPattern.Form2.resources
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\ObserverPattern\obj\Debug\ObserverPattern.Form3.resources
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\ObserverPattern\obj\Debug\ObserverPattern.Form4.resources
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\ObserverPattern\obj\Debug\ObserverPattern.Properties.Resources.resources
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\ObserverPattern\obj\Debug\ObserverPattern.csproj.GenerateResource.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\ObserverPattern\obj\Debug\ObserverPattern.csproj.CoreCompileInputs.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\ObserverPattern\obj\Debug\ObserverPattern.exe
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\ObserverPattern\obj\Debug\ObserverPattern.pdb

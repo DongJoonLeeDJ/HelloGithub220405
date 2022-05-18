@@ -13,10 +13,42 @@ namespace WelcomeSimhwa
     public partial class Form1 : Form
     {
         Bulbasaur bulba;
+        List<Product> products = new List<Product>(); //DataSource를 이 리스트로 바꾸는 것도 가능함
         public Form1()
         {
             InitializeComponent();
             bulba = new Bulbasaur();
+
+            productBindingSource.Add(new Product() { Name = "감자", Price = 500 });
+            productBindingSource.Add(new Product() { Name = "고구마", Price = 5000 });
+            productBindingSource.Add(new Product() { Name = "자색고구마", Price = 1500 });
+            productBindingSource.Add(new Product() { Name = "김치", Price = 3000 });
+
+            comboBox1.SelectedIndexChanged += DataSelect;
+            listBox1.SelectedIndexChanged += DataSelect;
+
+            bindingSource1.Add(new Student() { name = "이동준", num = 1, score = 70 });
+            bindingSource1.Add(new Student() { name = "정병주", num = 2, score = 80 });
+            bindingSource1.Add(new Student() { name = "이운복", num = 3, score = 90 });
+
+        }
+
+        private void DataSelect(object sender, EventArgs e)
+        {
+            if(sender is ComboBox)
+            {
+                ComboBox cbx = sender as ComboBox;
+                Product p = cbx.SelectedItem as Product; //내가 선택한 걸 Product타입으로 변경
+                MessageBox.Show(cbx.SelectedValue.ToString()); //선택한 것의 값
+                MessageBox.Show(p.ToString());
+            }
+            else if(sender is ListBox)
+            {
+                ListBox cbx = sender as ListBox;
+                Product p = cbx.SelectedItem as Product; //내가 선택한 걸 Product타입으로 변경
+                MessageBox.Show(cbx.SelectedValue.ToString()); //선택한 것의 값
+                MessageBox.Show(p.ToString());
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -90,6 +122,18 @@ namespace WelcomeSimhwa
             {
                 Console.WriteLine(item);
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            products.Add(new Product() {Name="포켓몬게임", Price=50000 });
+            products.Add(new Product() {Name="포켓몬빵", Price=1550000 });
+            products.Add(new Product() {Name="포켓몬스티커", Price=15500 });
+            comboBox1.DataSource = null;
+            comboBox1.DataSource = products;
+
+            listBox1.DataSource = null;
+            listBox1.DataSource = products;
         }
     }
 }

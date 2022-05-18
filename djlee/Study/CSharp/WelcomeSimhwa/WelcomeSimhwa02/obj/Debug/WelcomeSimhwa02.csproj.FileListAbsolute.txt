@@ -1,0 +1,11 @@
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\WelcomeSimhwa02\bin\Debug\WelcomeSimhwa02.exe.config
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\WelcomeSimhwa02\bin\Debug\WelcomeSimhwa02.exe
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\WelcomeSimhwa02\bin\Debug\WelcomeSimhwa02.pdb
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\WelcomeSimhwa02\obj\Debug\WelcomeSimhwa02.csproj.AssemblyReference.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\WelcomeSimhwa02\obj\Debug\WelcomeSimhwa02.csproj.SuggestedBindingRedirects.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\WelcomeSimhwa02\obj\Debug\WelcomeSimhwa02.Form1.resources
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\WelcomeSimhwa02\obj\Debug\WelcomeSimhwa02.Properties.Resources.resources
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\WelcomeSimhwa02\obj\Debug\WelcomeSimhwa02.csproj.GenerateResource.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\WelcomeSimhwa02\obj\Debug\WelcomeSimhwa02.csproj.CoreCompileInputs.cache
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\WelcomeSimhwa02\obj\Debug\WelcomeSimhwa02.exe
+D:\djlee\HelloGithub220405\djlee\Study\CSharp\WelcomeSimhwa\WelcomeSimhwa02\obj\Debug\WelcomeSimhwa02.pdb
