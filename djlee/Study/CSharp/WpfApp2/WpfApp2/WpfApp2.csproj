@@ -1,0 +1,88 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\KOHIBaeum.ttf" />
+    <None Remove="Fonts\KOTRA_BOLD.ttf" />
+    <None Remove="Fonts\NanumSquareB.ttf" />
+    <None Remove="Fonts\NanumSquareEB.ttf" />
+    <None Remove="Fonts\NanumSquareL.ttf" />
+    <None Remove="Fonts\NanumSquareR.ttf" />
+    <None Remove="Resource\__Banner1.png" />
+    <None Remove="Resource\__Banner2.png" />
+    <None Remove="Resource\__Banner3.png" />
+    <None Remove="Resource\__ic_del.png" />
+    <None Remove="Resource\__ic_home_Arrow.png" />
+    <None Remove="Resource\__ic_info.png" />
+    <None Remove="Resource\__ic_question_CHK_Off.png" />
+    <None Remove="Resource\__ic_question_CHK_On.png" />
+    <None Remove="Resource\__ic_set_CHK_Off.png" />
+    <None Remove="Resource\__ic_set_CHK_On.png" />
+    <None Remove="Resource\__ic_set_Data.png" />
+    <None Remove="Resource\__ic_set_Download.png" />
+    <None Remove="Resource\__ic_set_Down_Arrow.png" />
+    <None Remove="Resource\__ic_set_home.png" />
+    <None Remove="Resource\__ic_set_School.png" />
+    <None Remove="Resource\__ic_set_Sound.png" />
+    <None Remove="Resource\__ic_set_Templates.png" />
+    <None Remove="Resource\__ic_set_Upload.png" />
+    <None Remove="Resource\__ic_set_Up_Arrow.png" />
+    <None Remove="Resource\__ic_success.png" />
+    <None Remove="Resource\__ic_Weather_Bad.png" />
+    <None Remove="Resource\__ic_Weather_Good.png" />
+    <None Remove="Resource\__ic_Weather_Ordinary.png" />
+    <None Remove="Resource\__ic_Weather_VeryBad.png" />
+    <None Remove="Resource\__img_Standby_status-01.png" />
+    <None Remove="Resource\__img_Template_01-47.png" />
+    <None Remove="Resource\__img_Template_02-48.png" />
+    <None Remove="Resource\__img_Template_03-49.png" />
+    <None Remove="Resource\__login_bg_tem1.png" />
+    <None Remove="__img_Template_01-47.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\KOHIBaeum.ttf" />
+    <Resource Include="Fonts\KOTRA_BOLD.ttf" />
+    <Resource Include="Fonts\NanumSquareB.ttf" />
+    <Resource Include="Fonts\NanumSquareEB.ttf" />
+    <Resource Include="Fonts\NanumSquareL.ttf" />
+    <Resource Include="Fonts\NanumSquareR.ttf" />
+    <Resource Include="Resource\__Banner1.png" />
+    <Resource Include="Resource\__Banner2.png" />
+    <Resource Include="Resource\__Banner3.png" />
+    <Resource Include="Resource\__ic_del.png" />
+    <Resource Include="Resource\__ic_home_Arrow.png" />
+    <Resource Include="Resource\__ic_info.png" />
+    <Resource Include="Resource\__ic_question_CHK_Off.png" />
+    <Resource Include="Resource\__ic_question_CHK_On.png" />
+    <Resource Include="Resource\__ic_set_CHK_Off.png" />
+    <Resource Include="Resource\__ic_set_CHK_On.png" />
+    <Resource Include="Resource\__ic_set_Data.png" />
+    <Resource Include="Resource\__ic_set_Download.png" />
+    <Resource Include="Resource\__ic_set_Down_Arrow.png" />
+    <Resource Include="Resource\__ic_set_home.png" />
+    <Resource Include="Resource\__ic_set_School.png" />
+    <Resource Include="Resource\__ic_set_Sound.png" />
+    <Resource Include="Resource\__ic_set_Templates.png" />
+    <Resource Include="Resource\__ic_set_Upload.png" />
+    <Resource Include="Resource\__ic_set_Up_Arrow.png" />
+    <Resource Include="Resource\__ic_success.png" />
+    <Resource Include="Resource\__ic_Weather_Bad.png" />
+    <Resource Include="Resource\__ic_Weather_Good.png" />
+    <Resource Include="Resource\__ic_Weather_Ordinary.png" />
+    <Resource Include="Resource\__ic_Weather_VeryBad.png" />
+    <Resource Include="Resource\__img_Standby_status-01.png" />
+    <Resource Include="Resource\__img_Template_01-47.png" />
+    <Resource Include="Resource\__img_Template_02-48.png" />
+    <Resource Include="Resource\__img_Template_03-49.png" />
+    <Resource Include="Resource\__login_bg_tem1.png" />
+    <Resource Include="__img_Template_01-47.png" />
+  </ItemGroup>
+
+</Project>

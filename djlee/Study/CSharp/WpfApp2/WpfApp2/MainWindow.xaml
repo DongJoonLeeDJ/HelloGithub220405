@@ -1,0 +1,65 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="980" Width="460">
+    <!-- 
+        KOHI배움 
+        코트라 볼드체
+        나눔스퀘어
+        나눔스퀘어 Bold
+        나눔스퀘어 ExtraBold
+        나눔스퀘어 Light
+    -->
+    <Canvas >
+        <Canvas.Background>
+            <ImageBrush Stretch="Fill" ImageSource="/__img_Template_01-47.png"/>
+        </Canvas.Background>
+        <Label Name="welcome" Canvas.Left="80" Canvas.Top="60" Content="대구초등학교" FontSize="50" FontWeight="Bold" FontFamily="/WpfApp2;component/Fonts/#KOHI배움" Foreground="White" Background="Transparent"/>
+        <Label Name="welcomegreetingkr" Canvas.Left="30" Canvas.Top="120" Content="방문을 환영합니다." FontSize="46" FontFamily="/WpfApp2;component/Fonts/#코트라 볼드체" Foreground="#F4B8D9" Background="Transparent"/>
+        <Label Name="welcomegreetingen" Canvas.Left="180" Canvas.Top="180" Content="Welcome" FontSize="25" FontFamily="/WpfApp2;component/Fonts/#코트라 볼드체" Foreground="#F4B8D9" Background="Transparent"/>
+        <Label Name="welcomegreetingen_" Canvas.Left="210" Canvas.Top="190" Content="____" FontSize="50" FontFamily="/WpfApp2;component/Fonts/#코트라 볼드체" Foreground="#F4B8D9" Background="Transparent"/>
+        <Label Name="todaydate" Canvas.Left="130" Canvas.Top="270" Content="2022년4월27일" FontSize="30" FontFamily="/WpfApp2;component/Fonts/#KOHI배움" Foreground="White" Background="Transparent"/>
+        <WrapPanel Width="420" Height="180" Background="#aa70c4" Canvas.Left="10" Canvas.Top="350">
+                <StackPanel Orientation="Horizontal">
+                <Border CornerRadius="1" BorderBrush="Gray" BorderThickness="2">
+                    <Label Name="todaytempLabel" Content="현재온도" 
+                   Padding="90,5,0,0"
+                   Width="210"
+                   FontSize="15" FontFamily="/WpfApp2;component/Fonts/#나눔스퀘어" 
+                   Foreground="White" 
+                   Background="Transparent"
+                   />
+                </Border>
+                <Label Name="todayhumidityLabel" Content="습도" 
+                   Padding="90,5,0,0"
+                   Width="210"
+                   FontSize="15" FontFamily="/WpfApp2;component/Fonts/#나눔스퀘어" 
+                   Foreground="White" 
+                   Background="Transparent"
+                   />
+                
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+            <Label Name="todaytemp" Content="23°C" 
+                   Padding="70,0,0,0"
+                   Width="210"
+                   FontSize="40" FontFamily="/WpfApp2;component/Fonts/#나눔스퀘어 Bold" 
+                   Foreground="White" 
+                   Background="Transparent"
+                   />
+            <Label Name="todayhumidity" Content="35%" 
+                   Padding="60,0,0,0"
+                   Width="210"
+                   FontSize="40" FontFamily="/WpfApp2;component/Fonts/#나눔스퀘어 Bold" 
+                   Foreground="White" 
+                   Background="Transparent"
+                   />
+            </StackPanel>
+        </WrapPanel>
+    </Canvas>
+</Window>
